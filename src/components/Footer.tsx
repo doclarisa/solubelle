@@ -4,11 +4,12 @@ import Logo from './Logo';
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer style={{ background: '#0f172a', color: '#cbd5e1', paddingTop: '3.5rem', paddingBottom: '2rem' }}>
+    <footer style={{ background: '#0f2027', color: '#cbd5e1', paddingTop: 0, paddingBottom: '2rem' }}>
+      <div style={{ height: 3, background: 'linear-gradient(90deg, #0d7ec4, #3ebd6b)' }} />
       <div className="container-max">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2.5rem', marginBottom: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2.5rem', marginBottom: '3rem', paddingTop: '3.5rem' }}>
           <div>
-            <Logo className="brightness-0 invert" />
+            <Logo />
             <p style={{ marginTop: '1rem', fontSize: '0.875rem', lineHeight: 1.7, color: '#94a3b8' }}>
               The bag that disappears. PVA water-soluble grocery bags for US retailers and homes.
             </p>

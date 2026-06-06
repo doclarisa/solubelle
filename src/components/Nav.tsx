@@ -29,7 +29,9 @@ export default function Nav() {
         top: 0,
         zIndex: 50,
         background: scrolled ? 'rgba(255,255,255,0.97)' : '#fff',
-        boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.07)' : '0 1px 0 #e5e7eb',
+        borderBottom: '3px solid transparent',
+        borderImage: 'linear-gradient(90deg, #0d7ec4, #3ebd6b) 1',
+        boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.07)' : '0 2px 10px rgba(0,0,0,0.07)',
         transition: 'box-shadow 0.3s',
       }}
     >
@@ -56,8 +58,8 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <a href="/for-retailers" className="btn-secondary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem' }}>
-            Wholesale
+          <a href="/for-retailers" style={{ background: '#3ebd6b', color: '#fff', padding: '8px 18px', borderRadius: '999px', fontSize: '13px', fontWeight: 700, textDecoration: 'none', fontFamily: "'Poppins',sans-serif" }}>
+            Wholesale ›
           </a>
         </nav>
 

@@ -58,7 +58,7 @@ export default function EmailCapture() {
         />
         {error && <p id="email-error" role="alert" style={{ color: '#ef4444', fontSize: '0.8rem', marginTop: '0.3rem', textAlign: 'left' }}>{error}</p>}
       </div>
-      <button type="submit" className="btn-secondary">
+      <button type="submit" style={{ background: '#0f2027', color: '#fff', fontWeight: 700, fontSize: 15, padding: '14px 28px', borderRadius: 10, border: 'none', cursor: 'pointer', fontFamily: "'Poppins',sans-serif" }}>
         Join the List
       </button>
     </form>
