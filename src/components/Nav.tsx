@@ -29,8 +29,10 @@ export default function Nav() {
         top: 0,
         zIndex: 50,
         background: scrolled ? 'rgba(255,255,255,0.97)' : '#fff',
-        boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.07)' : '0 1px 0 #e5e7eb',
+        boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.07)' : 'none',
         transition: 'box-shadow 0.3s',
+        borderTop: '3px solid transparent',
+        borderImage: 'linear-gradient(90deg, #0D7EC4, #3EBD6B) 1',
       }}
     >
       <div className="container-max" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '68px' }}>
@@ -56,7 +58,20 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <a href="/for-retailers" className="btn-secondary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem' }}>
+          <a
+            href="/for-retailers"
+            style={{
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+              padding: '0.5rem 1.25rem',
+              background: '#3EBD6B', color: '#fff',
+              fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '0.85rem',
+              borderRadius: 9999, textDecoration: 'none',
+              boxShadow: '0 2px 8px rgba(62,189,107,0.35)',
+              transition: 'background-color 0.2s, transform 0.15s',
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = '#2E9E55'; (e.currentTarget as HTMLElement).style.transform = 'scale(1.04)'; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = '#3EBD6B'; (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
+          >
             Wholesale
           </a>
         </nav>
