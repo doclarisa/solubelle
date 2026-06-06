@@ -30,34 +30,25 @@ export default function EmailCapture() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', maxWidth: 520, margin: '0 auto' }} noValidate>
-      <div style={{ flex: 1, minWidth: 240 }}>
-        <label htmlFor="email-capture" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap' }}>
-          Email address
-        </label>
-        <input
-          id="email-capture"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="your@email.com"
-          required
-          style={{
-            width: '100%',
-            padding: '0.8rem 1.1rem',
-            borderRadius: 6,
-            border: error ? '1.5px solid #ef4444' : '1.5px solid #d1d5db',
-            fontFamily: "'Inter',sans-serif",
-            fontSize: '1rem',
-            outline: 'none',
-            transition: 'border-color 0.2s',
-          }}
-          onFocus={(e) => (e.target.style.borderColor = '#1A7DC4')}
-          onBlur={(e) => (e.target.style.borderColor = error ? '#ef4444' : '#d1d5db')}
-          aria-describedby={error ? 'email-error' : undefined}
-        />
-        {error && <p id="email-error" role="alert" style={{ color: '#ef4444', fontSize: '0.8rem', marginTop: '0.3rem', textAlign: 'left' }}>{error}</p>}
-      </div>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }} noValidate>
+      <label htmlFor="email-capture" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap' }}>
+        Email address
+      </label>
+      <input
+        id="email-capture"
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="your@email.com"
+        required
+        style={{
+          padding: '14px 22px', borderRadius: 10, border: 'none',
+          fontSize: 15, width: 280, outline: 'none',
+          fontFamily: "'Poppins',sans-serif",
+        }}
+        aria-describedby={error ? 'email-error' : undefined}
+      />
+      {error && <p id="email-error" role="alert" style={{ color: '#fca5a5', fontSize: '0.8rem', width: '100%', textAlign: 'center' }}>{error}</p>}
       <button type="submit" style={{ background: '#0f2027', color: '#fff', fontWeight: 700, fontSize: 15, padding: '14px 28px', borderRadius: 10, border: 'none', cursor: 'pointer', fontFamily: "'Poppins',sans-serif" }}>
         Join the List
       </button>
