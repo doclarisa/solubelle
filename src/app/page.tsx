@@ -51,14 +51,14 @@ export default function HomePage() {
           boxShadow: 'inset 0 0 120px 40px rgba(0,0,0,0.45)',
         }} />
 
-        {/* ── Bottom fade into next white section ── */}
+        {/* ── Bottom edge darkens slightly so the photo ends cleanly ── */}
         <div aria-hidden="true" style={{
-          position: 'absolute', bottom: 0, left: 0, right: 0, height: 100,
-          background: 'linear-gradient(to bottom, transparent 0%, #fff 100%)',
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: 60,
+          background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 100%)',
         }} />
 
         {/* ── Content ── */}
-        <div className="container-max" style={{ position: 'relative', zIndex: 1, padding: '80px 24px 120px' }}>
+        <div className="container-max" style={{ position: 'relative', zIndex: 1, padding: '80px 24px 80px' }}>
 
           {/* Eyebrow badge */}
           <div style={{ marginBottom: 28 }}>
