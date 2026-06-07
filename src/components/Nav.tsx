@@ -30,7 +30,7 @@ export default function Nav() {
         zIndex: 50,
         background: scrolled ? 'rgba(255,255,255,0.97)' : '#fff',
         borderBottom: '3px solid transparent',
-        borderImage: 'linear-gradient(90deg, #0d7ec4, #3ebd6b) 1',
+        borderImage: 'linear-gradient(90deg, #1A7DC4, #4CAF50) 1',
         boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.07)' : '0 2px 10px rgba(0,0,0,0.07)',
         transition: 'box-shadow 0.3s',
       }}
@@ -58,7 +58,7 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <a href="/for-retailers" style={{ background: '#3ebd6b', color: '#fff', padding: '8px 18px', borderRadius: '999px', fontSize: '13px', fontWeight: 700, textDecoration: 'none', fontFamily: "'Poppins',sans-serif" }}>
+          <a href="/for-retailers" style={{ background: '#4CAF50', color: '#fff', padding: '8px 20px', borderRadius: '999px', fontSize: '13px', fontWeight: 700, textDecoration: 'none', fontFamily: "'Poppins',sans-serif", letterSpacing: '0.01em', transition: 'background 0.2s' }} onMouseEnter={e => (e.currentTarget.style.background = '#388E3C')} onMouseLeave={e => (e.currentTarget.style.background = '#4CAF50')}>
             Wholesale ›
           </a>
         </nav>

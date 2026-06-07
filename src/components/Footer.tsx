@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer style={{ background: '#0f2027', color: '#cbd5e1', paddingTop: 0, paddingBottom: '2rem' }}>
-      <div style={{ height: 3, background: 'linear-gradient(90deg, #0d7ec4, #3ebd6b)' }} />
+      <div style={{ height: 3, background: 'linear-gradient(90deg, #1A7DC4, #4CAF50)' }} />
       <div className="container-max">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2.5rem', marginBottom: '3rem', paddingTop: '3.5rem' }}>
           <div>

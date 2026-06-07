@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import EmailCapture from '@/components/EmailCapture';
+import FadeInSection from '@/components/FadeInSection';
 
 export const metadata: Metadata = {
   title: 'Solubelle® | Water-Soluble Grocery Bags | Zero Plastic. Zero Guilt.',
@@ -8,207 +10,442 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div style={{ fontFamily: "'Poppins', sans-serif", background: '#fff' }}>
+    <div style={{ fontFamily: "'Inter', sans-serif", background: '#fff', color: '#1a1a1a' }}>
 
-      {/* HERO */}
+      {/* ── HERO ──────────────────────────────────────────────── */}
       <section style={{
-        background: 'linear-gradient(135deg, #0a5fa0 0%, #0d7ec4 40%, #2aab5e 80%, #3ebd6b 100%)',
-        padding: '90px 40px 80px',
-        textAlign: 'center',
         position: 'relative',
+        padding: '100px 0 88px',
+        background: '#fff',
         overflow: 'hidden',
+        textAlign: 'center',
       }}>
-        {/* decorative circles */}
-        <div style={{ position: 'absolute', top: -60, left: -60, width: 300, height: 300, borderRadius: '50%', background: 'rgba(255,255,255,0.07)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: -80, right: -40, width: 350, height: 350, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', top: -100, right: -120, width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle, rgba(26,125,196,0.07) 0%, transparent 65%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: -80, left: -100, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(76,175,80,0.06) 0%, transparent 65%)', pointerEvents: 'none' }} />
 
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{
-            display: 'inline-block', background: 'rgba(255,255,255,0.22)', color: '#fff',
-            fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
-            padding: '6px 18px', borderRadius: 999, marginBottom: 22, border: '1px solid rgba(255,255,255,0.4)',
-          }}>
-            🌿 Now Available to US Retailers
+        <div className="container-max" style={{ position: 'relative', zIndex: 1 }}>
+          <FadeInSection>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              background: '#f0f9ff', color: '#1A7DC4',
+              fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
+              padding: '7px 18px', borderRadius: 999, marginBottom: 32,
+              border: '1px solid rgba(26,125,196,0.2)',
+              fontFamily: "'Poppins', sans-serif",
+            }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4CAF50', display: 'inline-block' }} />
+              Now Available to US Retailers
+            </div>
+
+            <h1 style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: 'clamp(2.75rem, 6.5vw, 4.5rem)',
+              fontWeight: 800,
+              lineHeight: 1.08,
+              color: '#0f172a',
+              marginBottom: 24,
+              letterSpacing: '-0.02em',
+            }}>
+              The Bag That<br />
+              Disappears.{' '}
+              <span style={{
+                background: 'linear-gradient(135deg, #1A7DC4 0%, #4CAF50 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>For Real.</span>
+            </h1>
+
+            <p style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: 'clamp(1rem, 2.2vw, 1.2rem)',
+              color: '#4b5563',
+              maxWidth: 580,
+              margin: '0 auto 44px',
+              lineHeight: 1.75,
+            }}>
+              Solubelle delivers PVA water-soluble grocery bags to US retailers — no microplastics, no landfill, no compromise.
+            </p>
+
+            <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 48 }}>
+              <Link href="/for-retailers" className="btn-primary" style={{ padding: '15px 34px', borderRadius: 8, fontSize: 15 }}>
+                Wholesale for Your Store
+              </Link>
+              <Link href="/products" className="btn-outline-blue" style={{ padding: '15px 34px', borderRadius: 8, fontSize: 15 }}>
+                Shop for Your Home
+              </Link>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 28, flexWrap: 'wrap' }}>
+              {['Dissolves in under 2 min', 'Zero microplastics', 'FDA-safe materials', 'Ships from the US'].map((pt) => (
+                <span key={pt} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 13, color: '#6b7280' }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4CAF50', display: 'inline-block', flexShrink: 0 }} />
+                  {pt}
+                </span>
+              ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── TRUST BAR ─────────────────────────────────────────── */}
+      <div style={{
+        background: '#f0f9ff',
+        borderTop: '1px solid #ddeef8',
+        borderBottom: '1px solid #ddeef8',
+        padding: '14px 40px',
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        gap: 0,
+      }}>
+        {['FDA-Safe Materials', 'ASTM D6400 Certified', 'Zero Microplastics', 'Ships From US', 'No Landfill Waste'].map((item, i, arr) => (
+          <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 24px', borderRight: i < arr.length - 1 ? '1px solid #c8dff0' : 'none' }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4CAF50', display: 'inline-block', flexShrink: 0 }} />
+            <span style={{ fontSize: 12.5, color: '#374151', fontWeight: 600, fontFamily: "'Poppins', sans-serif", letterSpacing: '0.01em' }}>{item}</span>
           </div>
-          <h1 style={{ fontSize: 52, fontWeight: 800, color: '#fff', lineHeight: 1.12, marginBottom: 18, position: 'relative', zIndex: 1 }}>
-            The Bag That<br />Disappears. For Real.
-          </h1>
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.88)', maxWidth: 560, margin: '0 auto 36px', lineHeight: 1.65, position: 'relative', zIndex: 1 }}>
-            Solubelle brings PVA water-soluble grocery bags to American retailers — no microplastics, no landfill, no compromise.
-          </p>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 1 }}>
-            <a href="/products" style={{ background: '#fff', color: '#0d7ec4', fontWeight: 700, fontSize: 15, padding: '14px 32px', borderRadius: 10, border: 'none', cursor: 'pointer', textDecoration: 'none', display: 'inline-block' }}>
-              Shop for Your Home
-            </a>
-            <a href="/for-retailers" style={{ background: 'transparent', color: '#fff', fontWeight: 700, fontSize: 15, padding: '14px 32px', borderRadius: 10, border: '2px solid #fff', cursor: 'pointer', textDecoration: 'none', display: 'inline-block' }}>
-              Wholesale for Your Store
-            </a>
-          </div>
-          <div style={{ marginTop: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, color: 'rgba(255,255,255,0.8)', fontSize: 13, position: 'relative', zIndex: 1 }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#a8f5c4', display: 'inline-block' }} />
-            Dissolves completely in water · Leaves zero microplastics
+        ))}
+      </div>
+
+      {/* ── THE NUMBERS ───────────────────────────────────────── */}
+      <section style={{ background: '#fff', padding: '88px 0 80px' }}>
+        <div className="container-max">
+          <FadeInSection>
+            <div style={{ textAlign: 'center', marginBottom: 60 }}>
+              <p style={{ color: '#1A7DC4', fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '0.78rem', letterSpacing: '0.13em', textTransform: 'uppercase', marginBottom: 14 }}>
+                The Problem
+              </p>
+              <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 'clamp(1.85rem, 4.5vw, 2.9rem)', color: '#0f172a', lineHeight: 1.15, marginBottom: 18 }}>
+                100 Billion Bags a Year.<br />Zero Good Excuses Left.
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: '#4b5563', maxWidth: 560, margin: '0 auto', lineHeight: 1.75 }}>
+                Americans discard 100 billion single-use plastic bags annually. They take up to 1,000 years to break down. The alternatives weren&apos;t working. We built one that does.
+              </p>
+            </div>
+          </FadeInSection>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', maxWidth: 900, margin: '0 auto' }}>
+            {[
+              { num: '100B', label: 'Plastic bags discarded in the US per year', color: '#1A7DC4' },
+              { num: '0', label: 'Microplastics or polymer fragments left behind', color: '#4CAF50' },
+              { num: '< 2 min', label: 'To dissolve completely in hot water', color: '#1A7DC4' },
+              { num: '12+', label: 'US states with active plastic bag bans', color: '#4CAF50' },
+            ].map((stat, i) => (
+              <FadeInSection key={stat.label} delay={i * 90}>
+                <div style={{ textAlign: 'center', padding: '2.25rem 1.5rem', borderRadius: 14, background: '#fafcff', border: '1px solid #eaf2fb' }}>
+                  <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 'clamp(1.85rem, 4vw, 2.6rem)', color: stat.color, marginBottom: 10, lineHeight: 1 }}>
+                    {stat.num}
+                  </div>
+                  <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.55, margin: 0 }}>{stat.label}</p>
+                </div>
+              </FadeInSection>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* STATS BAR */}
-      <div style={{ background: '#0f2027', padding: '20px 40px', display: 'flex', justifyContent: 'center', gap: 48, flexWrap: 'wrap' }}>
-        {[
-          { num: '100B', label: 'Bags Discarded Per Year' },
-          { num: '0', label: 'Microplastics Left Behind' },
-          { num: '< 2 min', label: 'To Fully Dissolve' },
-          { num: '12+', label: 'States Banned Plastic Bags' },
-        ].map((s) => (
-          <div key={s.label} style={{ textAlign: 'center' }}>
-            <span style={{ display: 'block', fontSize: 22, fontWeight: 800, color: '#3ebd6b' }}>{s.num}</span>
-            <span style={{ display: 'block', fontSize: 11, color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 2 }}>{s.label}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* THREE FEATURE CARDS */}
-      <div style={{ background: '#f0f9ff', padding: '72px 40px', textAlign: 'center' }}>
-        <div style={{ fontSize: 12, fontWeight: 700, color: '#3ebd6b', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
-          The Problem · The Solution · The Proof
-        </div>
-        <div style={{ fontSize: 36, fontWeight: 800, color: '#0f2027', marginBottom: 12, lineHeight: 1.2 }}>
-          Why Everything Else Falls Short
-        </div>
-        <div style={{ fontSize: 17, color: '#3a5068', maxWidth: 540, margin: '0 auto 52px', lineHeight: 1.65 }}>
-          100 billion plastic bags enter landfills each year in the US. We built the alternative.
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 28, maxWidth: 900, margin: '0 auto' }}>
-          {[
-            { circleBg: '#fff0f0', emoji: '🗑️', stat: '100B', title: 'Bags a Year', desc: 'Americans discard 100 billion single-use plastic bags annually — taking 400–1,000 years to break down.' },
-            { circleBg: '#e8f4fd', emoji: '💧', stat: '< 2 min', title: 'Gone in Minutes', desc: 'Drop a Solubelle bag in hot water and it fully dissolves. No fragments. No residue. Just water.' },
-            { circleBg: '#edfaf3', emoji: '🌿', stat: 'Zero', title: 'Trace Left Behind', desc: 'PVA is not a microplastic. It biodegrades completely — no persistent polymer fragments, ever.' },
-          ].map((c) => (
-            <div key={c.title} style={{ background: '#fff', borderRadius: 16, padding: '32px 28px', border: '1px solid #e0eef8', textAlign: 'center' }}>
-              <div style={{ width: 64, height: 64, borderRadius: '50%', background: c.circleBg, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: 28 }}>
-                {c.emoji}
-              </div>
-              <div style={{ fontSize: 36, fontWeight: 800, color: '#0d7ec4', marginBottom: 8 }}>{c.stat}</div>
-              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#0f2027', marginBottom: 10 }}>{c.title}</h3>
-              <p style={{ fontSize: 14, color: '#3a5068', lineHeight: 1.6 }}>{c.desc}</p>
+      {/* ── FEATURES ──────────────────────────────────────────── */}
+      <section style={{ background: '#f8fcff', padding: '88px 0 80px', borderTop: '1px solid #ddeef8', borderBottom: '1px solid #ddeef8' }}>
+        <div className="container-max">
+          <FadeInSection>
+            <div style={{ textAlign: 'center', marginBottom: 60 }}>
+              <p style={{ color: '#4CAF50', fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '0.78rem', letterSpacing: '0.13em', textTransform: 'uppercase', marginBottom: 14 }}>
+                The Solution
+              </p>
+              <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 'clamp(1.85rem, 4.5vw, 2.9rem)', color: '#0f172a', lineHeight: 1.15 }}>
+                Why Everything Else Falls Short
+              </h2>
             </div>
-          ))}
-        </div>
-      </div>
+          </FadeInSection>
 
-      {/* VIDEO SECTION */}
-      <div style={{ background: '#0f2027', padding: '72px 40px', textAlign: 'center' }}>
-        <div style={{ fontSize: 12, fontWeight: 700, color: '#3ebd6b', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
-          See It to Believe It
-        </div>
-        <div style={{ fontSize: 36, fontWeight: 800, color: '#fff', marginBottom: 16, lineHeight: 1.2 }}>
-          No Tricks. No Editing.
-        </div>
-        <div style={{ fontSize: 17, color: 'rgba(255,255,255,0.7)', maxWidth: 540, margin: '0 auto 40px', lineHeight: 1.65 }}>
-          Just a bag, a glass of hot water, and 90 seconds of your time.
-        </div>
-        <div style={{ background: '#1a3a52', borderRadius: 16, padding: '72px 40px', textAlign: 'center', maxWidth: 700, margin: '0 auto' }}>
-          <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'linear-gradient(135deg, #0d7ec4, #3ebd6b)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: 28, color: '#fff' }}>
-            ▶
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '1.75rem' }}>
+            {[
+              {
+                icon: (
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                    <path d="M13 2C13 2 4 10 4 16a9 9 0 0018 0C22 10 13 2 13 2z" fill="#1A7DC4" fillOpacity="0.12" stroke="#1A7DC4" strokeWidth="1.5" strokeLinejoin="round" />
+                    <path d="M9 17c0 2.2 1.8 4 4 4" stroke="#1A7DC4" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                ),
+                accent: '#e8f4fd',
+                title: 'Dissolves Completely',
+                desc: "Drop it in hot water. In under two minutes it's gone — not broken into fragments, not floating in pieces. The polymer chains break apart entirely.",
+              },
+              {
+                icon: (
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                    <path d="M13 2L2 7v7c0 5.8 4.8 11.2 11 12.5C20.2 25.2 24 19.8 24 14V7L13 2z" fill="#4CAF50" fillOpacity="0.1" stroke="#4CAF50" strokeWidth="1.5" strokeLinejoin="round" />
+                    <path d="M8 13.5l3.5 3.5 6.5-7" stroke="#4CAF50" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                ),
+                accent: '#e8f5e9',
+                title: "Rain-Safe Until You're Done",
+                desc: 'Works exactly like a plastic bag in normal conditions. Handles wet produce, damp hands, and light rain. Dissolves when you choose — not before.',
+              },
+              {
+                icon: (
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                    <circle cx="13" cy="13" r="10" fill="#1A7DC4" fillOpacity="0.08" stroke="#1A7DC4" strokeWidth="1.5" />
+                    <path d="M13 7v6l3.5 3.5" stroke="#1A7DC4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8 13a5 5 0 0010 0" stroke="#4CAF50" strokeWidth="1.4" strokeLinecap="round" />
+                  </svg>
+                ),
+                accent: '#f0f9ff',
+                title: 'Zero Polymer Fragments',
+                desc: 'PVA is not a traditional plastic. It cannot fragment into microplastics. No persistent residue. No polymer persistence in soil or water.',
+              },
+            ].map((f, i) => (
+              <FadeInSection key={f.title} delay={i * 110}>
+                <div style={{ background: '#fff', borderRadius: 14, padding: '2.5rem 2.25rem', border: '1px solid #e4eef8', height: '100%', boxSizing: 'border-box' }}>
+                  <div style={{ width: 52, height: 52, borderRadius: 12, background: f.accent, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 22 }}>
+                    {f.icon}
+                  </div>
+                  <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '1.05rem', color: '#0f172a', marginBottom: 12 }}>{f.title}</h3>
+                  <p style={{ fontSize: '0.925rem', color: '#4b5563', lineHeight: 1.73, margin: 0 }}>{f.desc}</p>
+                </div>
+              </FadeInSection>
+            ))}
           </div>
-          <h3 style={{ fontSize: 24, fontWeight: 700, color: '#fff', marginBottom: 10 }}>Watch It Dissolve Live</h3>
-          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>
-            This is the demo that closes every sales meeting.<br />A glass of water. Drop the bag in. Watch the room react.
-          </p>
-          <a href="/how-it-works" style={{ color: '#3ebd6b', fontSize: 14, fontWeight: 600, marginTop: 20, display: 'inline-block', textDecoration: 'none' }}>
-            Learn how PVA works →
-          </a>
         </div>
-      </div>
+      </section>
 
-      {/* TWO AUDIENCE CARDS */}
-      <div style={{ background: '#fff', padding: '72px 40px', textAlign: 'center' }}>
-        <div style={{ fontSize: 12, fontWeight: 700, color: '#3ebd6b', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
-          Who It&apos;s For
+      {/* ── DEMO ──────────────────────────────────────────────── */}
+      <section style={{ background: '#fff', padding: '96px 0' }}>
+        <div className="container-max">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'center', maxWidth: 940, margin: '0 auto' }}>
+            <FadeInSection>
+              <p style={{ color: '#4CAF50', fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '0.78rem', letterSpacing: '0.13em', textTransform: 'uppercase', marginBottom: 16 }}>
+                See It to Believe It
+              </p>
+              <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 'clamp(1.85rem, 4.5vw, 2.75rem)', color: '#0f172a', lineHeight: 1.15, marginBottom: 22 }}>
+                No Tricks.<br />No Editing.
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.78, marginBottom: 20 }}>
+                Just a bag, a glass of hot water, and 90 seconds. This is the demo that closes every sales meeting.
+              </p>
+              <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.78, marginBottom: 36 }}>
+                Bring a glass of water to your next staff meeting. Drop one in. By the time you&apos;re done talking, it&apos;ll be gone.
+              </p>
+              <Link href="/how-it-works" className="btn-outline-blue" style={{ borderRadius: 8 }}>
+                Learn How PVA Works →
+              </Link>
+            </FadeInSection>
+            <FadeInSection delay={120}>
+              <div style={{
+                background: 'linear-gradient(150deg, #e8f4fd 0%, #e8f5e9 100%)',
+                borderRadius: 20,
+                padding: '4rem 2.75rem',
+                textAlign: 'center',
+                border: '1px solid #d0e8f5',
+              }}>
+                <div style={{
+                  width: 72, height: 72, borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #1A7DC4, #4CAF50)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  margin: '0 auto 24px',
+                }}>
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-label="Play video" style={{ marginLeft: 3 }}>
+                    <path d="M8 6L22 13L8 20V6z" fill="#fff" />
+                  </svg>
+                </div>
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '1.15rem', color: '#0f172a', marginBottom: 10 }}>
+                  Watch It Dissolve Live
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: '#4b5563', lineHeight: 1.7, margin: '0 0 20px' }}>
+                  A glass of water. Drop the bag in.<br />Watch the room react.
+                </p>
+                <Link href="/how-it-works" style={{ color: '#1A7DC4', fontSize: '0.875rem', fontWeight: 600, textDecoration: 'none', fontFamily: "'Poppins', sans-serif" }}>
+                  Read the science →
+                </Link>
+              </div>
+            </FadeInSection>
+          </div>
         </div>
-        <div style={{ fontSize: 36, fontWeight: 800, color: '#0f2027', marginBottom: 44, lineHeight: 1.2 }}>
-          Built for Stores. Loved at Home.
+      </section>
+
+      {/* ── WHO IT'S FOR ──────────────────────────────────────── */}
+      <section style={{ background: '#f8fcff', padding: '88px 0 80px', borderTop: '1px solid #ddeef8', borderBottom: '1px solid #ddeef8' }}>
+        <div className="container-max">
+          <FadeInSection>
+            <div style={{ textAlign: 'center', marginBottom: 56 }}>
+              <p style={{ color: '#1A7DC4', fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '0.78rem', letterSpacing: '0.13em', textTransform: 'uppercase', marginBottom: 14 }}>
+                Who It&apos;s For
+              </p>
+              <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 'clamp(1.85rem, 4.5vw, 2.9rem)', color: '#0f172a', lineHeight: 1.15 }}>
+                Built for Stores. Loved at Home.
+              </h2>
+            </div>
+          </FadeInSection>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))', gap: '1.75rem', maxWidth: 880, margin: '0 auto' }}>
+            <FadeInSection>
+              <div style={{ background: '#fff', borderRadius: 18, padding: '2.75rem 2.5rem', border: '1.5px solid #bde0f7', height: '100%', boxSizing: 'border-box' }}>
+                <div style={{ width: 46, height: 46, borderRadius: 11, background: '#e8f4fd', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 22 }}>
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="3" y="6" width="16" height="13" rx="2" stroke="#1A7DC4" strokeWidth="1.5" />
+                    <path d="M8 6V5a3 3 0 016 0v1" stroke="#1A7DC4" strokeWidth="1.5" />
+                    <line x1="3" y1="11" x2="19" y2="11" stroke="#1A7DC4" strokeWidth="1.5" />
+                  </svg>
+                </div>
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '1.2rem', color: '#0f172a', marginBottom: 14 }}>For Stores &amp; Retailers</h3>
+                <p style={{ fontSize: '0.95rem', color: '#4b5563', lineHeight: 1.78, marginBottom: 28 }}>
+                  Replace your checkout bags with something your customers will talk about. Plastic ban compliant. Fits existing dispensers. The demo sells itself.
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: 34, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {['Fits existing T-shirt bag dispensers', 'State bag-ban compliant', 'Net-30 terms for qualified accounts', 'Custom branded bags available'].map(item => (
+                    <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 9, fontSize: '0.875rem', color: '#374151' }}>
+                      <span style={{ color: '#1A7DC4', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/for-retailers" className="btn-primary" style={{ display: 'block', textAlign: 'center', borderRadius: 8 }}>
+                  Get Wholesale Pricing
+                </Link>
+              </div>
+            </FadeInSection>
+
+            <FadeInSection delay={120}>
+              <div style={{ background: '#fff', borderRadius: 18, padding: '2.75rem 2.5rem', border: '1.5px solid #c8e6c9', height: '100%', boxSizing: 'border-box' }}>
+                <div style={{ width: 46, height: 46, borderRadius: 11, background: '#e8f5e9', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 22 }}>
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <path d="M11 2C11 2 4 8 4 13a7 7 0 0014 0C18 8 11 2 11 2z" stroke="#4CAF50" strokeWidth="1.5" fill="#4CAF50" fillOpacity="0.1" />
+                    <path d="M8 14a3.5 3.5 0 003 1.5" stroke="#4CAF50" strokeWidth="1.4" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '1.2rem', color: '#0f172a', marginBottom: 14 }}>For Your Home</h3>
+                <p style={{ fontSize: '0.95rem', color: '#4b5563', lineHeight: 1.78, marginBottom: 28 }}>
+                  Order a box, keep them in the car, bring them everywhere. Guilt-free grocery runs for the whole family. Rain-safe until you&apos;re ready to dissolve them.
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: 34, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {['No behavior change required', 'Holds up to 12 lbs of groceries', 'Works for produce too', 'Easy to store and carry'].map(item => (
+                    <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 9, fontSize: '0.875rem', color: '#374151' }}>
+                      <span style={{ color: '#4CAF50', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/products" className="btn-secondary" style={{ display: 'block', textAlign: 'center', borderRadius: 8 }}>
+                  Shop Now
+                </Link>
+              </div>
+            </FadeInSection>
+          </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24, maxWidth: 860, margin: '0 auto' }}>
-          <div style={{ background: '#0d7ec4', borderRadius: 20, padding: '44px 36px', textAlign: 'left' }}>
-            <h3 style={{ fontSize: 22, fontWeight: 800, color: '#fff', marginBottom: 14 }}>For Stores &amp; Retailers</h3>
-            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, marginBottom: 28 }}>
-              Replace your checkout bags with something your customers will actually talk about. A glass of water and a 30-second demo sells itself.
+      </section>
+
+      {/* ── TESTIMONIALS ──────────────────────────────────────── */}
+      <section style={{ background: '#fff', padding: '88px 0 80px' }}>
+        <div className="container-max">
+          <FadeInSection>
+            <div style={{ textAlign: 'center', marginBottom: 56 }}>
+              <p style={{ color: '#4CAF50', fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '0.78rem', letterSpacing: '0.13em', textTransform: 'uppercase', marginBottom: 14 }}>
+                From the Field
+              </p>
+              <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 'clamp(1.85rem, 4.5vw, 2.9rem)', color: '#0f172a', lineHeight: 1.15 }}>
+                What Retailers Are Saying
+              </h2>
+            </div>
+          </FadeInSection>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.75rem', maxWidth: 960, margin: '0 auto' }}>
+            {[
+              { quote: 'We put a glass of water on the counter and dropped one in. Every customer stopped to watch.', name: 'Sarah M.', title: 'Natural Grocery Store Owner' },
+              { quote: 'Finally a bag I can offer customers without feeling like I\'m greenwashing.', name: 'Market Vendor', title: 'Austin, TX' },
+              { quote: 'My staff demo it at checkout. We\'ve had customers come back just to buy more for home use.', name: 'Regional Manager', title: 'Specialty Grocery, Pacific NW' },
+            ].map((t, i) => (
+              <FadeInSection key={t.name} delay={i * 110}>
+                <div style={{ background: '#fafcff', borderRadius: 14, padding: '2.25rem 2rem', border: '1px solid #e4eef8', position: 'relative' }}>
+                  <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: '3rem', color: '#1A7DC4', lineHeight: 1, marginBottom: 16, opacity: 0.25 }}>&ldquo;</div>
+                  <blockquote style={{ margin: 0, fontStyle: 'italic', color: '#374151', lineHeight: 1.78, fontSize: '0.975rem', marginBottom: 24 }}>
+                    {t.quote}
+                  </blockquote>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg, #1A7DC4, #4CAF50)', flexShrink: 0 }} />
+                    <div>
+                      <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '0.875rem', color: '#0f172a', margin: 0 }}>{t.name}</p>
+                      <p style={{ fontSize: '0.8rem', color: '#9ca3af', margin: '2px 0 0' }}>{t.title}</p>
+                    </div>
+                  </div>
+                </div>
+              </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMPARISON TABLE ──────────────────────────────────── */}
+      <section style={{ background: '#f8fcff', padding: '88px 0 80px', borderTop: '1px solid #ddeef8' }}>
+        <div className="container-max">
+          <FadeInSection>
+            <div style={{ textAlign: 'center', marginBottom: 52 }}>
+              <p style={{ color: '#1A7DC4', fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '0.78rem', letterSpacing: '0.13em', textTransform: 'uppercase', marginBottom: 14 }}>
+                How We Compare
+              </p>
+              <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 'clamp(1.85rem, 4.5vw, 2.9rem)', color: '#0f172a', lineHeight: 1.15, marginBottom: 16 }}>
+                See Why Smart Retailers Are Switching
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#6b7280', maxWidth: 480, margin: '0 auto' }}>
+                Three bag types. Six criteria. No spin.
+              </p>
+            </div>
+          </FadeInSection>
+          <FadeInSection delay={100}>
+            <div style={{ maxWidth: 820, margin: '0 auto', borderRadius: 14, overflow: 'hidden', border: '1px solid #d6eaf8', boxShadow: '0 2px 24px rgba(26,125,196,0.06)' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr>
+                    <th style={{ padding: '15px 22px', fontSize: 11, fontWeight: 700, color: '#6b7280', textAlign: 'left', background: '#f0f6fc', fontFamily: "'Poppins', sans-serif", textTransform: 'uppercase', letterSpacing: '0.07em' }}>Feature</th>
+                    <th style={{ padding: '15px 22px', fontSize: 13, fontWeight: 700, color: '#1A7DC4', textAlign: 'center', background: '#e8f4fd', fontFamily: "'Poppins', sans-serif", borderLeft: '2px solid #bde0f7', borderRight: '2px solid #bde0f7' }}>
+                      Solubelle PVA
+                      <span style={{ display: 'block', fontSize: 9.5, fontWeight: 700, color: '#4CAF50', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: 3 }}>Best Option</span>
+                    </th>
+                    <th style={{ padding: '15px 22px', fontSize: 11, fontWeight: 600, color: '#6b7280', textAlign: 'center', background: '#f0f6fc', fontFamily: "'Poppins', sans-serif" }}>Traditional Plastic</th>
+                    <th style={{ padding: '15px 22px', fontSize: 11, fontWeight: 600, color: '#6b7280', textAlign: 'center', background: '#f0f6fc', fontFamily: "'Poppins', sans-serif" }}>Paper Bag</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Dissolves in nature', '✅ Yes', '❌ 400–1,000 yrs', '⚠️ Partial'],
+                    ['Microplastics risk', '✅ None', '❌ High', '✅ None'],
+                    ['Load strength', '✅ 10–15 lbs', '✅ High', '⚠️ Moderate'],
+                    ['Rain resistance', '✅ Yes', '✅ Yes', '❌ No'],
+                    ['Toxic residue', '✅ None', '❌ Yes', '⚠️ Inks/bleach'],
+                    ['US availability', '✅ Ships now', '✅', '✅'],
+                  ].map((row, i) => (
+                    <tr key={String(i)}>
+                      <td style={{ padding: '13px 22px', fontSize: 13.5, color: '#374151', background: i % 2 === 0 ? '#fff' : '#fafcff', borderBottom: '1px solid #edf4fb' }}>{row[0]}</td>
+                      <td style={{ padding: '13px 22px', fontSize: 13.5, fontWeight: 600, color: '#1A7DC4', background: i % 2 === 0 ? '#f0f9ff' : '#e8f4fd', borderBottom: '1px solid #d6ecf8', textAlign: 'center', borderLeft: '2px solid #bde0f7', borderRight: '2px solid #bde0f7' }}>{row[1]}</td>
+                      <td style={{ padding: '13px 22px', fontSize: 13.5, color: '#4b5563', background: i % 2 === 0 ? '#fff' : '#fafcff', borderBottom: '1px solid #edf4fb', textAlign: 'center' }}>{row[2]}</td>
+                      <td style={{ padding: '13px 22px', fontSize: 13.5, color: '#4b5563', background: i % 2 === 0 ? '#fff' : '#fafcff', borderBottom: '1px solid #edf4fb', textAlign: 'center' }}>{row[3]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p style={{ textAlign: 'center', marginTop: 22 }}>
+              <Link href="/why-solubelle" style={{ color: '#1A7DC4', fontSize: '0.9rem', fontWeight: 600, textDecoration: 'none', fontFamily: "'Poppins', sans-serif" }}>
+                See the full comparison — all 5 bag types →
+              </Link>
             </p>
-            <a href="/for-retailers" style={{ display: 'inline-block', background: '#fff', color: '#0d7ec4', fontWeight: 700, fontSize: 14, padding: '12px 26px', borderRadius: 10, textDecoration: 'none' }}>
-              Get Wholesale Pricing
-            </a>
-          </div>
-          <div style={{ background: '#3ebd6b', borderRadius: 20, padding: '44px 36px', textAlign: 'left' }}>
-            <h3 style={{ fontSize: 22, fontWeight: 800, color: '#fff', marginBottom: 14 }}>For Your Home</h3>
-            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, marginBottom: 28 }}>
-              Order a box, keep them in the car, bring them everywhere. Guilt-free grocery runs for the whole family. Rain-safe until you&apos;re done.
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── EMAIL CTA ─────────────────────────────────────────── */}
+      <section style={{ background: 'linear-gradient(135deg, #1A7DC4 0%, #2fa55a 100%)', padding: '84px 0' }}>
+        <div className="container-max" style={{ textAlign: 'center' }}>
+          <FadeInSection>
+            <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 'clamp(1.85rem, 4.5vw, 2.75rem)', color: '#fff', marginBottom: 14, letterSpacing: '-0.01em' }}>
+              Be First. Stay Ahead.
+            </h2>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', maxWidth: 460, margin: '0 auto 38px', lineHeight: 1.75 }}>
+              Wholesale pricing, new SKUs, and launch updates — straight to your inbox.
             </p>
-            <a href="/products" style={{ display: 'inline-block', background: '#fff', color: '#3ebd6b', fontWeight: 700, fontSize: 14, padding: '12px 26px', borderRadius: 10, textDecoration: 'none' }}>
-              Shop Now
-            </a>
-          </div>
+            <EmailCapture />
+          </FadeInSection>
         </div>
-      </div>
-
-      {/* COMPARISON TABLE */}
-      <div style={{ background: '#f0f9ff', padding: '72px 40px', textAlign: 'center' }}>
-        <div style={{ fontSize: 12, fontWeight: 700, color: '#3ebd6b', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
-          How We Compare
-        </div>
-        <div style={{ fontSize: 36, fontWeight: 800, color: '#0f2027', marginBottom: 44, lineHeight: 1.2 }}>
-          See Why Smart Retailers Are Switching
-        </div>
-        <div style={{ maxWidth: 820, margin: '0 auto', borderRadius: 16, overflow: 'hidden', border: '1px solid #d0e8f5' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr>
-                <th style={{ padding: '16px 20px', fontSize: 13, fontWeight: 700, color: '#fff', textAlign: 'left', background: '#0f2027' }}>Feature</th>
-                <th style={{ padding: '16px 20px', fontSize: 13, fontWeight: 700, color: '#fff', textAlign: 'left', background: '#0d7ec4' }}>
-                  Solubelle PVA <span style={{ display: 'inline-block', background: '#3ebd6b', color: '#fff', fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 999, marginLeft: 8 }}>Best</span>
-                </th>
-                <th style={{ padding: '16px 20px', fontSize: 13, fontWeight: 700, color: '#fff', textAlign: 'left', background: '#0f2027' }}>Traditional Plastic</th>
-                <th style={{ padding: '16px 20px', fontSize: 13, fontWeight: 700, color: '#fff', textAlign: 'left', background: '#0f2027' }}>Paper Bag</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ['Dissolves in nature', '✅ Yes', '❌ 400–1,000 yrs', '⚠️ Partial'],
-                ['Microplastics risk', '✅ None', '❌ High', '✅ None'],
-                ['Load strength', '✅ 10–15 lbs', '✅ High', '⚠️ Moderate'],
-                ['Rain resistance', '✅ Yes', '✅ Yes', '❌ No'],
-                ['Toxic residue', '✅ None', '❌ Yes', '⚠️ Inks/bleach'],
-                ['Available in US', '✅ Ships now', '✅', '✅'],
-              ].map((row, i) => (
-                <tr key={i}>
-                  <td style={{ padding: '14px 20px', fontSize: 14, color: '#3a5068', background: i % 2 === 0 ? '#fff' : '#f7fbff', borderBottom: '1px solid #e8f4fd' }}>{row[0]}</td>
-                  <td style={{ padding: '14px 20px', fontSize: 14, fontWeight: 700, color: '#0d7ec4', background: i % 2 === 0 ? '#e8f5ff' : '#d6edff', borderBottom: '1px solid #e8f4fd' }}>{row[1]}</td>
-                  <td style={{ padding: '14px 20px', fontSize: 14, color: '#3a5068', background: i % 2 === 0 ? '#fff' : '#f7fbff', borderBottom: '1px solid #e8f4fd' }}>{row[2]}</td>
-                  <td style={{ padding: '14px 20px', fontSize: 14, color: '#3a5068', background: i % 2 === 0 ? '#fff' : '#f7fbff', borderBottom: '1px solid #e8f4fd' }}>{row[3]}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* TRUST BAR */}
-      <div style={{ background: '#0f2027', padding: '22px 40px', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-        {['FDA-Safe Materials', 'ASTM D6400 Certified', 'Zero Microplastics', 'Ships From US', 'No Landfill Waste'].map((item, i, arr) => (
-          <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 28px', borderRight: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.12)' : 'none' }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#3ebd6b', flexShrink: 0, display: 'inline-block' }} />
-            <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>{item}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* EMAIL CTA */}
-      <div style={{ background: 'linear-gradient(135deg, #0d7ec4, #3ebd6b)', padding: '72px 40px', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 34, fontWeight: 800, color: '#fff', marginBottom: 10 }}>Be First. Stay Ahead.</h2>
-        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.82)', marginBottom: 30 }}>
-          Wholesale pricing, new SKUs, and launch events — straight to your inbox.
-        </p>
-        <EmailCapture />
-      </div>
+      </section>
 
     </div>
   );

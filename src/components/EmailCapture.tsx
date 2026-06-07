@@ -6,7 +6,7 @@ export default function EmailCapture() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email || !email.includes('@')) {
       setError('Please enter a valid email address.');
@@ -49,7 +49,7 @@ export default function EmailCapture() {
         aria-describedby={error ? 'email-error' : undefined}
       />
       {error && <p id="email-error" role="alert" style={{ color: '#fca5a5', fontSize: '0.8rem', width: '100%', textAlign: 'center' }}>{error}</p>}
-      <button type="submit" style={{ background: '#0f2027', color: '#fff', fontWeight: 700, fontSize: 15, padding: '14px 28px', borderRadius: 10, border: 'none', cursor: 'pointer', fontFamily: "'Poppins',sans-serif" }}>
+      <button type="submit" style={{ background: '#0f172a', color: '#fff', fontWeight: 700, fontSize: 15, padding: '14px 28px', borderRadius: 10, border: 'none', cursor: 'pointer', fontFamily: "'Poppins',sans-serif" }}>
         Join the List
       </button>
     </form>
