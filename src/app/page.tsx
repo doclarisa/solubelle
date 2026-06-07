@@ -60,27 +60,6 @@ export default function HomePage() {
         {/* ── Content ── */}
         <div className="container-max" style={{ position: 'relative', zIndex: 1, padding: '80px 24px 120px' }}>
 
-          {/* Large logo on frosted card */}
-          <div style={{
-            display: 'inline-block',
-            background: 'rgba(255,255,255,0.96)',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            borderRadius: 20,
-            padding: '22px 44px',
-            marginBottom: 40,
-            boxShadow: '0 8px 48px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.12)',
-          }}>
-            <Image
-              src="/SolubelleLOGO.png"
-              alt="Solubelle — water-soluble grocery bags"
-              width={300}
-              height={90}
-              priority
-              style={{ objectFit: 'contain', width: 'clamp(200px, 32vw, 300px)', height: 'auto', display: 'block' }}
-            />
-          </div>
-
           {/* Eyebrow badge */}
           <div style={{ marginBottom: 28 }}>
             <span style={{
@@ -127,7 +106,7 @@ export default function HomePage() {
 
           {/* CTAs */}
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 52 }}>
-            <Link href="/for-retailers" style={{
+            <a href="#wholesale" style={{
               display: 'inline-flex', alignItems: 'center',
               background: '#1A7DC4',
               color: '#fff',
@@ -135,10 +114,9 @@ export default function HomePage() {
               fontFamily: "'Poppins', sans-serif", fontWeight: 700,
               textDecoration: 'none',
               boxShadow: '0 4px 24px rgba(26,125,196,0.5)',
-              transition: 'transform 0.15s',
             }}>
               Wholesale for Your Store
-            </Link>
+            </a>
             <Link href="/products" style={{
               display: 'inline-flex', alignItems: 'center',
               background: 'rgba(255,255,255,0.12)',
@@ -512,7 +490,7 @@ export default function HomePage() {
       </section>
 
       {/* ── EMAIL CTA ─────────────────────────────────────────── */}
-      <section style={{ background: 'linear-gradient(135deg, #1A7DC4 0%, #2fa55a 100%)', padding: '84px 0' }}>
+      <section id="wholesale" style={{ background: 'linear-gradient(135deg, #1A7DC4 0%, #2fa55a 100%)', padding: '84px 0' }}>
         <div className="container-max" style={{ textAlign: 'center' }}>
           <FadeInSection>
             <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 'clamp(1.85rem, 4.5vw, 2.75rem)', color: '#fff', marginBottom: 14, letterSpacing: '-0.01em' }}>
