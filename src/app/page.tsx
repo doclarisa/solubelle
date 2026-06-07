@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import EmailCapture from '@/components/EmailCapture';
 import FadeInSection from '@/components/FadeInSection';
 
@@ -15,76 +16,154 @@ export default function HomePage() {
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section style={{
         position: 'relative',
-        padding: '100px 0 88px',
-        background: '#fff',
+        minHeight: '92vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         overflow: 'hidden',
+        /* Fallback gradient — matches lab-blue tone while image loads */
+        background: 'linear-gradient(160deg, #083d6e 0%, #0b1929 55%, #071a10 100%)',
         textAlign: 'center',
       }}>
-        <div style={{ position: 'absolute', top: -100, right: -120, width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle, rgba(26,125,196,0.07) 0%, transparent 65%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: -80, left: -100, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(76,175,80,0.06) 0%, transparent 65%)', pointerEvents: 'none' }} />
 
-        <div className="container-max" style={{ position: 'relative', zIndex: 1 }}>
-          <FadeInSection>
-            <div style={{
+        {/* ── Background photo ── place licensed image at /public/hero-bg.jpg */}
+        <div style={{ position: 'absolute', inset: 0 }}>
+          <Image
+            src="/hero-bg.jpg"
+            alt=""
+            fill
+            priority
+            quality={88}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+          />
+        </div>
+
+        {/* ── Colour overlay: blue brand wash + deep darkening at bottom ── */}
+        <div aria-hidden="true" style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(160deg, rgba(15,52,96,0.72) 0%, rgba(11,25,41,0.65) 45%, rgba(11,25,41,0.82) 100%)',
+        }} />
+
+        {/* ── Soft vignette edges ── */}
+        <div aria-hidden="true" style={{
+          position: 'absolute', inset: 0,
+          boxShadow: 'inset 0 0 120px 40px rgba(0,0,0,0.45)',
+        }} />
+
+        {/* ── Bottom fade into next white section ── */}
+        <div aria-hidden="true" style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: 100,
+          background: 'linear-gradient(to bottom, transparent 0%, #fff 100%)',
+        }} />
+
+        {/* ── Content ── */}
+        <div className="container-max" style={{ position: 'relative', zIndex: 1, padding: '80px 24px 120px' }}>
+
+          {/* Large logo on frosted card */}
+          <div style={{
+            display: 'inline-block',
+            background: 'rgba(255,255,255,0.96)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            borderRadius: 20,
+            padding: '22px 44px',
+            marginBottom: 40,
+            boxShadow: '0 8px 48px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.12)',
+          }}>
+            <Image
+              src="/SolubelleLOGO.png"
+              alt="Solubelle — water-soluble grocery bags"
+              width={300}
+              height={90}
+              priority
+              style={{ objectFit: 'contain', width: 'clamp(200px, 32vw, 300px)', height: 'auto', display: 'block' }}
+            />
+          </div>
+
+          {/* Eyebrow badge */}
+          <div style={{ marginBottom: 28 }}>
+            <span style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: '#f0f9ff', color: '#1A7DC4',
+              background: 'rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              color: '#fff',
               fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
-              padding: '7px 18px', borderRadius: 999, marginBottom: 32,
-              border: '1px solid rgba(26,125,196,0.2)',
+              padding: '7px 20px', borderRadius: 999,
+              border: '1px solid rgba(255,255,255,0.22)',
               fontFamily: "'Poppins', sans-serif",
             }}>
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4CAF50', display: 'inline-block' }} />
               Now Available to US Retailers
-            </div>
+            </span>
+          </div>
 
-            <h1 style={{
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: 'clamp(2.75rem, 6.5vw, 4.5rem)',
-              fontWeight: 800,
-              lineHeight: 1.08,
-              color: '#0f172a',
-              marginBottom: 24,
-              letterSpacing: '-0.02em',
+          {/* Headline */}
+          <h1 style={{
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: 'clamp(2.6rem, 6vw, 4.25rem)',
+            fontWeight: 800,
+            lineHeight: 1.1,
+            color: '#fff',
+            marginBottom: 22,
+            letterSpacing: '-0.02em',
+            textShadow: '0 2px 24px rgba(0,0,0,0.4)',
+          }}>
+            The Bag That<br />Disappears. For Real.
+          </h1>
+
+          {/* Sub */}
+          <p style={{
+            fontSize: 'clamp(1rem, 2.2vw, 1.2rem)',
+            color: 'rgba(255,255,255,0.86)',
+            maxWidth: 560,
+            margin: '0 auto 44px',
+            lineHeight: 1.75,
+          }}>
+            Solubelle delivers PVA water-soluble grocery bags to US retailers —<br className="hidden md:block" />
+            no microplastics, no landfill, no compromise.
+          </p>
+
+          {/* CTAs */}
+          <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 52 }}>
+            <Link href="/for-retailers" style={{
+              display: 'inline-flex', alignItems: 'center',
+              background: '#1A7DC4',
+              color: '#fff',
+              padding: '15px 34px', borderRadius: 8, fontSize: 15,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 700,
+              textDecoration: 'none',
+              boxShadow: '0 4px 24px rgba(26,125,196,0.5)',
+              transition: 'transform 0.15s',
             }}>
-              The Bag That<br />
-              Disappears.{' '}
-              <span style={{
-                background: 'linear-gradient(135deg, #1A7DC4 0%, #4CAF50 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>For Real.</span>
-            </h1>
-
-            <p style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: 'clamp(1rem, 2.2vw, 1.2rem)',
-              color: '#4b5563',
-              maxWidth: 580,
-              margin: '0 auto 44px',
-              lineHeight: 1.75,
+              Wholesale for Your Store
+            </Link>
+            <Link href="/products" style={{
+              display: 'inline-flex', alignItems: 'center',
+              background: 'rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              color: '#fff',
+              padding: '15px 34px', borderRadius: 8, fontSize: 15,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 700,
+              textDecoration: 'none',
+              border: '2px solid rgba(255,255,255,0.45)',
             }}>
-              Solubelle delivers PVA water-soluble grocery bags to US retailers — no microplastics, no landfill, no compromise.
-            </p>
+              Shop for Your Home
+            </Link>
+          </div>
 
-            <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 48 }}>
-              <Link href="/for-retailers" className="btn-primary" style={{ padding: '15px 34px', borderRadius: 8, fontSize: 15 }}>
-                Wholesale for Your Store
-              </Link>
-              <Link href="/products" className="btn-outline-blue" style={{ padding: '15px 34px', borderRadius: 8, fontSize: 15 }}>
-                Shop for Your Home
-              </Link>
-            </div>
+          {/* Proof points */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
+            {['Dissolves in under 2 min', 'Zero microplastics', 'FDA-safe materials', 'Ships from the US'].map((pt) => (
+              <span key={pt} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 13, color: 'rgba(255,255,255,0.78)' }}>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4CAF50', display: 'inline-block', flexShrink: 0 }} />
+                {pt}
+              </span>
+            ))}
+          </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 28, flexWrap: 'wrap' }}>
-              {['Dissolves in under 2 min', 'Zero microplastics', 'FDA-safe materials', 'Ships from the US'].map((pt) => (
-                <span key={pt} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 13, color: '#6b7280' }}>
-                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4CAF50', display: 'inline-block', flexShrink: 0 }} />
-                  {pt}
-                </span>
-              ))}
-            </div>
-          </FadeInSection>
         </div>
       </section>
 
