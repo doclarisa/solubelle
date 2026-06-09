@@ -266,36 +266,53 @@ export default function HomePage() {
       </section>
 
       {/* ── 4. HOPE / NATURE IMAGE ──────────────────────────── */}
-      <section style={{ position: 'relative', overflow: 'hidden', minHeight: 440, display: 'flex', alignItems: 'center' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <Image
-            src="/ocean2.png"
-            alt="Crystal clear ocean water — the environment Solubelle protects"
-            fill
-            quality={80}
-            sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
-          />
-        </div>
-        {/* Light overlay left side — keeps image visible, dark text readable */}
-        <div aria-hidden="true" style={{
-          position: 'absolute', inset: 0, zIndex: 1,
-          background: 'linear-gradient(to right, rgba(254,252,247,.94) 0%, rgba(254,252,247,.88) 45%, rgba(254,252,247,.5) 70%, rgba(254,252,247,.1) 100%)',
-        }} />
+      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 480 }}>
+
+        {/* Left half — solid background, fully readable text */}
         <FadeInSection>
-          <div style={{ position: 'relative', zIndex: 2, maxWidth: 560, padding: '80px 52px' }}>
+          <div style={{
+            background: MINT,
+            display: 'flex', flexDirection: 'column', justifyContent: 'center',
+            padding: '72px 60px',
+            height: '100%', boxSizing: 'border-box',
+          }}>
             <Eyebrow>Our promise</Eyebrow>
-            <h2 style={{ fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)', fontWeight: 800, color: INK, lineHeight: 1.2, marginBottom: 18 }}>
-              This is what we&apos;re <em style={{ color: OCEAND, fontStyle: 'normal' }}>protecting</em>.
+            <h2 style={{ fontSize: 'clamp(1.9rem, 2.8vw, 2.6rem)', fontWeight: 800, color: INK, lineHeight: 1.2, marginBottom: 18 }}>
+              This is what we&apos;re <span style={{ color: OCEAND }}>protecting</span>.
             </h2>
-            <p style={{ fontSize: 18, color: INKM, lineHeight: 1.72, marginBottom: 28 }}>
+            <p style={{ fontSize: 18, color: INKM, lineHeight: 1.75, marginBottom: 28 }}>
               Every Solubelle bag that dissolves is a bag that doesn&apos;t spend centuries in the ocean. Our materials are proven non-toxic in water, soil, and marine environments — certified by ASTM D6400 and EN13432.
             </p>
-            <a href="#contact" className="btn-hero-green">
+            <ul style={{ listStyle: 'none', padding: 0, marginBottom: 32, display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {[
+                'Non-toxic in seawater and freshwater',
+                'Marine biodegradable — TÜV Austria certified',
+                'Zero persistent polymer residue',
+              ].map((item) => (
+                <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 16, color: INKM, fontWeight: 500 }}>
+                  <Check color={LEAFD} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="#contact" className="btn-leaf" style={{ alignSelf: 'flex-start', textDecoration: 'none' }}>
               Get free samples →
             </a>
           </div>
         </FadeInSection>
+
+        {/* Right half — ocean photo, full bleed */}
+        <div style={{ position: 'relative', minHeight: 480 }}>
+          <Image
+            src="/ocean2.png"
+            alt="Crystal clear ocean water — the environment Solubelle protects"
+            fill
+            quality={85}
+            sizes="50vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
+
       </section>
 
       {/* ── 5. STATS ────────────────────────────────────────── */}

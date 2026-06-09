@@ -37,7 +37,7 @@ export default function Nav() {
         maxWidth: 1240,
         margin: '0 auto',
         padding: '0 52px',
-        height: 80,
+        height: 170,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -48,10 +48,10 @@ export default function Nav() {
           <Image
             src="/SolubelleLOGO.png"
             alt="Solubelle — water-soluble grocery bags"
-            width={180}
-            height={54}
+            width={500}
+            height={150}
             priority
-            style={{ objectFit: 'contain', height: '52px', width: 'auto', display: 'block' }}
+            style={{ objectFit: 'contain', height: '150px', width: 'auto', display: 'block' }}
           />
         </a>
 
