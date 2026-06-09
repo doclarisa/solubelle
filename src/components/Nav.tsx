@@ -8,6 +8,7 @@ const links = [
   { href: '/how-it-works',  label: 'How it works' },
   { href: '/why-solubelle', label: 'Applications' },
   { href: '/for-retailers', label: 'For retailers' },
+  { href: '/blog',          label: 'Blog' },
   { href: '/about',         label: 'Our story' },
   { href: '/faq',           label: 'FAQs' },
 ];
