@@ -277,21 +277,21 @@ export default function HomePage() {
             style={{ objectFit: 'cover', objectPosition: 'center' }}
           />
         </div>
-        {/* Light overlay — image stays highly visible */}
+        {/* Light overlay left side — keeps image visible, dark text readable */}
         <div aria-hidden="true" style={{
           position: 'absolute', inset: 0, zIndex: 1,
-          background: `linear-gradient(to right, rgba(30,140,181,.78) 0%, rgba(30,140,181,.45) 48%, rgba(30,140,181,.15) 75%, transparent 100%)`,
+          background: 'linear-gradient(to right, rgba(254,252,247,.94) 0%, rgba(254,252,247,.88) 45%, rgba(254,252,247,.5) 70%, rgba(254,252,247,.1) 100%)',
         }} />
         <FadeInSection>
           <div style={{ position: 'relative', zIndex: 2, maxWidth: 560, padding: '80px 52px' }}>
-            <Eyebrow color="#7FD8F7">Our promise</Eyebrow>
-            <h2 style={{ fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)', fontWeight: 800, color: '#fff', lineHeight: 1.2, marginBottom: 18 }}>
-              This is what we&apos;re <em>protecting</em>.
+            <Eyebrow>Our promise</Eyebrow>
+            <h2 style={{ fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)', fontWeight: 800, color: INK, lineHeight: 1.2, marginBottom: 18 }}>
+              This is what we&apos;re <em style={{ color: OCEAND, fontStyle: 'normal' }}>protecting</em>.
             </h2>
-            <p style={{ fontSize: 18, color: 'rgba(255,255,255,.88)', lineHeight: 1.72, marginBottom: 28 }}>
+            <p style={{ fontSize: 18, color: INKM, lineHeight: 1.72, marginBottom: 28 }}>
               Every Solubelle bag that dissolves is a bag that doesn&apos;t spend centuries in the ocean. Our materials are proven non-toxic in water, soil, and marine environments — certified by ASTM D6400 and EN13432.
             </p>
-            <a href="#contact" className="btn-hero-white">
+            <a href="#contact" className="btn-hero-green">
               Get free samples →
             </a>
           </div>
@@ -338,7 +338,7 @@ export default function HomePage() {
                   border: `1.5px solid rgba(58,174,216,.2)`,
                   textAlign: 'center',
                 }}>
-                  <div style={{ fontSize: 'clamp(2.6rem, 4.5vw, 4rem)', fontWeight: 800, color: stat.color, marginBottom: 12, lineHeight: 1 }}>
+                  <div style={{ fontSize: 'clamp(1.7rem, 2.8vw, 2.6rem)', fontWeight: 800, color: stat.color, marginBottom: 12, lineHeight: 1 }}>
                     {stat.n}
                   </div>
                   <p style={{ fontSize: 14, color: INKM, lineHeight: 1.6, margin: 0 }}>{stat.label}</p>

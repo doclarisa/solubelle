@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const links = [
+  { href: '/',              label: 'Home' },
   { href: '/products',      label: 'Products' },
   { href: '/how-it-works',  label: 'How it works' },
   { href: '/why-solubelle', label: 'Applications' },
@@ -36,7 +37,7 @@ export default function Nav() {
         maxWidth: 1240,
         margin: '0 auto',
         padding: '0 52px',
-        height: 70,
+        height: 80,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -47,10 +48,10 @@ export default function Nav() {
           <Image
             src="/SolubelleLOGO.png"
             alt="Solubelle — water-soluble grocery bags"
-            width={140}
-            height={42}
+            width={180}
+            height={54}
             priority
-            style={{ objectFit: 'contain', height: '40px', width: 'auto', display: 'block' }}
+            style={{ objectFit: 'contain', height: '52px', width: 'auto', display: 'block' }}
           />
         </a>
 
