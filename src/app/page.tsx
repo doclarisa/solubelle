@@ -29,10 +29,10 @@ const Eyebrow = ({ color = LEAF, children }: { color?: string; children: string 
   </p>
 );
 
-const Check = ({ color = LEAF }: { color?: string }) => (
+const Check = ({ color = LEAF, solid = false }: { color?: string; solid?: boolean }) => (
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style={{ flexShrink: 0, marginTop: 1 }}>
-    <circle cx="9" cy="9" r="9" fill={color} fillOpacity=".15" />
-    <path d="M5 9l3 3 5-5" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="9" cy="9" r="9" fill={color} fillOpacity={solid ? 1 : .15} />
+    <path d="M5 9l3 3 5-5" stroke={solid ? '#fff' : color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -41,21 +41,23 @@ export default function HomePage() {
     <div style={{ fontFamily: "'Manrope', system-ui, sans-serif", background: OFF, color: INK }}>
 
       {/* ── 1. HERO ──────────────────────────────────────────── */}
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 580 }}>
+      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 620 }}>
 
         {/* Left half — solid background, fully readable text */}
         <div style={{
           display: 'flex', flexDirection: 'column', justifyContent: 'center',
-          padding: '72px 52px',
+          padding: '56px 52px',
           boxSizing: 'border-box',
         }}>
             {/* Pill badge */}
             <span style={{
               display: 'inline-flex', alignItems: 'center', gap: 7,
+              alignSelf: 'flex-start',
+              width: 'fit-content',
               background: 'rgba(93,174,97,.15)', border: '1.5px solid rgba(93,174,97,.3)',
               borderRadius: 999, padding: '6px 16px',
               fontSize: 13, fontWeight: 700, color: LEAFD, letterSpacing: '.02em',
-              marginBottom: 22,
+              marginBottom: 20, whiteSpace: 'nowrap',
             }}>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M7 1C7 1 2 5.5 2 8.5a5 5 0 0010 0C12 5.5 7 1 7 1z" fill={LEAF} fillOpacity=".25" stroke={LEAFD} strokeWidth="1.2"/>
@@ -64,11 +66,11 @@ export default function HomePage() {
             </span>
 
             <h1 style={{
-              fontSize: 'clamp(2.4rem, 4.5vw, 3.6rem)',
+              fontSize: 'clamp(2.8rem, 5.5vw, 4.2rem)',
               fontWeight: 800,
-              lineHeight: 1.1,
+              lineHeight: 1.05,
               color: INK,
-              marginBottom: 20,
+              marginBottom: 28,
               letterSpacing: '-0.02em',
             }}>
               Drop it in water.<br />
@@ -76,11 +78,11 @@ export default function HomePage() {
             </h1>
 
             <p style={{ fontSize: 18, color: INKM, maxWidth: 460, lineHeight: 1.7, marginBottom: 28 }}>
-              Solubelle delivers PVA dissolvable grocery bags to US retailers — no microplastics, no landfill, no recycling required. The bag that finally solves the problem.
+              Solubelle delivers PVA dissolvable grocery bags to US retailers — no microplastics, no landfill, no recycling required.
             </p>
 
             {/* Checklist */}
-            <ul style={{ listStyle: 'none', padding: 0, marginBottom: 36, display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <ul style={{ listStyle: 'none', padding: 0, marginBottom: 32, display: 'flex', flexDirection: 'column', gap: 9 }}>
               {[
                 SPECS.dissolution.hotWaterFull,
                 'Zero microplastics — verified by FTIR analysis',
@@ -89,7 +91,7 @@ export default function HomePage() {
                 'ASTM D6400 & EN13432 certified',
               ].map((item) => (
                 <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 16, color: INKM, fontWeight: 500 }}>
-                  <Check />
+                  <Check solid />
                   {item}
                 </li>
               ))}
@@ -106,16 +108,23 @@ export default function HomePage() {
           </div>
 
         {/* Right half — hero photo, full bleed */}
-        <div style={{ position: 'relative', minHeight: 480 }}>
-          <Image
-            src="/heroimg1.png"
-            alt="Solubelle PVA dissolvable grocery bag dissolving in water"
-            fill
-            priority
-            quality={88}
-            sizes="50vw"
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
-          />
+        <div style={{ position: 'relative', minHeight: 480, overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', inset: 0, animation: 'float 8s ease-in-out infinite' }}>
+            <Image
+              src="/heroimg1.png"
+              alt="Solubelle PVA dissolvable grocery bag dissolving in water"
+              fill
+              priority
+              quality={88}
+              sizes="50vw"
+              style={{ objectFit: 'cover', objectPosition: 'center', transform: 'scale(1.08)' }}
+            />
+          </div>
+          {/* Soft scrim to blend the seam between photo and text column */}
+          <div aria-hidden="true" style={{
+            position: 'absolute', inset: '0 auto 0 0', width: 100, zIndex: 1,
+            background: 'linear-gradient(to right, var(--offwhite), rgba(254,252,247,0))',
+          }} />
         </div>
       </section>
 
