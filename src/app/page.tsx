@@ -45,6 +45,17 @@ export default function HomePage() {
 
         {/* Left — text, aligned to the 1240px content boundary */}
         <div className="order-2 lg:order-1 flex flex-col justify-center box-border px-5 py-10 md:px-8 md:py-12 lg:py-14 lg:pr-12 lg:pl-[max(52px,calc((100vw_-_1240px)/2_+_52px))]">
+            {/* Wordmark — first thing visitors see */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 18 }}>
+              <svg width="28" height="28" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M7 1C7 1 2 5.5 2 8.5a5 5 0 0010 0C12 5.5 7 1 7 1z" fill={LEAF} fillOpacity=".25" stroke={LEAFD} strokeWidth="1.2"/>
+              </svg>
+              <span style={{ fontSize: 'clamp(1.5rem, 2.6vw, 1.9rem)', fontWeight: 800, letterSpacing: '-0.01em' }}>
+                <span style={{ color: OCEAND }}>Solu</span><span style={{ color: LEAFD }}>belle</span>
+                <sup style={{ fontSize: '0.5em', marginLeft: 2 }}>®</sup>
+              </span>
+            </div>
+
             {/* Pill badge */}
             <span className="inline-flex items-center gap-[7px] w-fit max-w-full whitespace-normal mb-5" style={{
               alignSelf: 'flex-start',

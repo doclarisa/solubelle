@@ -108,9 +108,9 @@ export default function ProductsPage() {
                   <p style={{ fontSize: '0.85rem', color: product.accent, fontWeight: 600, marginBottom: '1.75rem', fontFamily: "'Poppins', sans-serif" }}>{product.sizes}</p>
                   <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                     <Link href="/contact" className="btn-primary" style={{ flex: 1, minWidth: 120, textAlign: 'center', borderRadius: 8 }}>Order Samples</Link>
-                    <button className="btn-secondary" style={{ flex: 1, minWidth: 120, borderRadius: 8 }}>
-                      Add to Cart
-                    </button>
+                    <Link href="/contact" className="btn-secondary" style={{ flex: 1, minWidth: 120, textAlign: 'center', borderRadius: 8, textDecoration: 'none' }}>
+                      Request Pricing →
+                    </Link>
                   </div>
                 </div>
               </FadeInSection>

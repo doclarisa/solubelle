@@ -94,13 +94,9 @@ export default function CertificationsPage() {
                   <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.25rem', color: '#1a1a1a' }}>{cert.name}</h3>
                   <p style={{ color: '#1A7DC4', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>{cert.subtitle}</p>
                   <p style={{ color: '#6b7280', lineHeight: 1.75, fontSize: '0.9rem', flex: 1, marginBottom: '1.5rem' }}>{cert.desc}</p>
-                  <button
-                    type="button"
-                    disabled
-                    style={{ padding: '0.65rem 1.25rem', borderRadius: 6, border: '1.5px solid #d1d5db', background: '#f9fafb', color: '#9ca3af', fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '0.85rem', cursor: 'not-allowed', width: '100%' }}
-                  >
-                    📄 Download PDF (Coming Soon)
-                  </button>
+                  <p style={{ fontSize: '0.85rem', color: '#9ca3af', fontStyle: 'italic', margin: 0 }}>
+                    Documentation packet available on request
+                  </p>
                 </div>
               </FadeInSection>
             ))}
