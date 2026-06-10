@@ -41,14 +41,10 @@ export default function HomePage() {
     <div style={{ fontFamily: "'Manrope', system-ui, sans-serif", background: OFF, color: INK }}>
 
       {/* ── 1. HERO ──────────────────────────────────────────── */}
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 620 }}>
+      <section className="hero-grid">
 
-        {/* Left half — solid background, fully readable text */}
-        <div style={{
-          display: 'flex', flexDirection: 'column', justifyContent: 'center',
-          padding: '56px 52px',
-          boxSizing: 'border-box',
-        }}>
+        {/* Left — text, aligned to the 1240px content boundary */}
+        <div className="hero-text">
             {/* Pill badge */}
             <span style={{
               display: 'inline-flex', alignItems: 'center', gap: 7,
@@ -107,8 +103,8 @@ export default function HomePage() {
             </div>
           </div>
 
-        {/* Right half — hero photo, full bleed */}
-        <div style={{ position: 'relative', minHeight: 480, overflow: 'hidden' }}>
+        {/* Right — hero photo, full bleed to the viewport edge */}
+        <div className="hero-photo">
           <div style={{ position: 'absolute', inset: 0, animation: 'float 8s ease-in-out infinite' }}>
             <Image
               src="/heroimg1.png"
@@ -116,15 +112,12 @@ export default function HomePage() {
               fill
               priority
               quality={88}
-              sizes="50vw"
-              style={{ objectFit: 'cover', objectPosition: 'center', transform: 'scale(1.08)' }}
+              sizes="(max-width: 900px) 100vw, 50vw"
+              style={{ objectFit: 'cover', objectPosition: 'var(--hero-photo-pos, center)', transform: 'scale(1.08)' }}
             />
           </div>
           {/* Soft scrim to blend the seam between photo and text column */}
-          <div aria-hidden="true" style={{
-            position: 'absolute', inset: '0 auto 0 0', width: 100, zIndex: 1,
-            background: 'linear-gradient(to right, var(--offwhite), rgba(254,252,247,0))',
-          }} />
+          <div aria-hidden="true" className="hero-seam" />
         </div>
       </section>
 

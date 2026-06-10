@@ -158,6 +158,49 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 12px;
 }
 
+/* ── Hero section ──────────────────────────────────────────── */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text photo";
+  min-height: 620px;
+}
+.hero-text {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 56px 48px 56px max(52px, calc((100vw - 1240px) / 2 + 52px));
+}
+.hero-photo {
+  grid-area: photo;
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  --hero-photo-pos: center;
+}
+.hero-seam {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 100px;
+  z-index: 1;
+  background: linear-gradient(to right, var(--offwhite), rgba(254, 252, 247, 0));
+}
+@media (min-width: 1700px) {
+  .hero-photo { --hero-photo-pos: 58% center; }
+}
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "photo" "text";
+    min-height: auto;
+  }
+  .hero-text { padding: 40px 24px; }
+  .hero-photo { min-height: 320px; }
+  .hero-seam { display: none; }
+}
+
 /* ── Scroll fade-in (dissolve-in) ──────────────────────────── */
 @keyframes dissolve-in {
   from { opacity: 0; filter: blur(4px); transform: translateY(8px); }
