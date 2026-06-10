@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 export const posts = [
   {
+    slug: 'pva-biodegradability-controversy-explained',
+    title: 'The Bag That Disappears — And the Controversy That Didn\'t: The PVA Biodegradability Debate Explained',
+    excerpt: 'A 2021 study claimed PVA doesn\'t biodegrade. Independent scientists, the EPA, and the EU disagreed. Here\'s the full story — and why grocery bags are a different case entirely.',
+    date: '2026-06-10',
+    readTime: '7 min read',
+    category: 'Science',
+    categoryColor: '#1E8CB5',
+  },
+  {
     slug: 'pva-bags-vs-compostable-bags',
     title: 'PVA Bags vs Compostable Bags: What\'s Actually the Difference?',
     excerpt: 'Compostable bags need industrial facilities most Americans can\'t access. PVA bags dissolve under your tap. Here\'s the full comparison every retailer should read.',

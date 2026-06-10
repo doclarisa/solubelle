@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { posts } from '../page';
 import { SPECS } from '@/lib/specs';
@@ -29,6 +30,63 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 /* ── Full post content ─────────────────────────────────────── */
 const content: Record<string, React.ReactNode> = {
+  'pva-biodegradability-controversy-explained': (
+    <>
+      <p>
+        Somewhere in a grocery store in Spain, a shopper lifts a bag from the rack, loads it with vegetables, and walks home. The bag looks like plastic. It handles like plastic. It is most decidedly not plastic — at least not in any way that matters to the ocean.
+      </p>
+      <p>
+        Drop it in warm water and within minutes it&apos;s gone. Not gone as in out of sight. Gone as in water, carbon dioxide, and microscopic organic matter that bacteria will finish off over the next several weeks. That bag is made of polyvinyl alcohol. And depending on whom you ask, it is either a quiet revolution in packaging materials — or an invisible plastic pollutant silently accumulating in your waterways. The truth, as with most things that matter, is more complicated than either side wants to admit.
+      </p>
+
+      <div style={{ position: 'relative', width: '100%', aspectRatio: '3 / 2', borderRadius: 16, overflow: 'hidden', margin: '0 0 1.75rem' }}>
+        <Image
+          src="/farmersmarket.png"
+          alt="Shopper carrying a PVA water-soluble grocery bag at a farmers market"
+          fill
+          sizes="(max-width: 760px) 100vw, 760px"
+          style={{ objectFit: 'cover' }}
+        />
+      </div>
+
+      <h2>The Study That Started the Fight</h2>
+      <p>
+        In June 2021, two researchers at Arizona State University published a paper that landed like a grenade in the sustainability-packaging world. Charles Rolsky and Varun Kelkar estimated that as much as 75% of PVA from <strong>laundry and dishwasher pods</strong> passes through US wastewater plants without fully degrading — roughly 8,000 tons a year entering rivers, soils, and potentially the food chain. The study ran no original experiments: it combined a 527-household survey with degradation data drawn from prior literature. Rolsky was blunt: &quot;A lot of companies are claiming that PVA is biodegradable. It&apos;s not fully degrading.&quot; One aspect of the story&apos;s origin was underplayed: the study was partially funded by Blueland, a company that sells PVA-free laundry products and competes directly with pod-based detergents.
+      </p>
+
+      <blockquote style={{ borderLeft: '4px solid #5DAE61', paddingLeft: '1rem', color: '#3D4748', fontStyle: 'italic' }}>
+        &quot;The controversy made the whole industry prove its claims with better evidence. We think that&apos;s exactly how it should work.&quot;
+      </blockquote>
+
+      <h2>The Fight Back</h2>
+      <p>
+        The cleaning industry called the study &quot;severely flawed,&quot; accusing it of drawing on Indian wastewater infrastructure data that bears no resemblance to US treatment plants, and of applying worst-case degradation figures from PVA grades not used in consumer products.
+      </p>
+      <p>
+        The decisive rebuttal came from eight independent scientists assembled by SciPinion, an independent scientific review body. Their conclusion: the paper contained &quot;significant scientific flaws;&quot; real-world degradation is much higher than predicted; and PVA should be classified as <strong>readily biodegradable</strong> that should not build up in the environment. The <strong>US EPA</strong> then reviewed the petition citing the study and retained PVA on its Safer Choice list of verified-safe ingredients. The <strong>European Union</strong> went further, explicitly excluding water-soluble polymers like PVA from its 2023 microplastics regulation: once dissolved, there is no solid particle — so by definition, no microplastic.
+      </p>
+
+      <h2>Why Grocery Bags Are a Different Story</h2>
+      <p>
+        The entire debate concerned <strong>billions of laundry pods</strong> flushing PVA down drains at industrial scale. A Solubelle grocery bag follows a fundamentally different path: you dissolve it deliberately, one bag at a time — a tiny fraction of a single laundry load — and wastewater plants handle that dissolved organic matter as routine. If a bag ends up in soil or rain, PVA breaks down through well-documented aerobic microbial action into water, CO₂, and biomass. <strong>No solid particles. No microplastics. Nothing to wash up on a beach.</strong>
+      </p>
+      <p>
+        None of this means grocery-bag PVA is entirely above scrutiny. Biodegradation rates vary with temperature, microbial community, and PVA grade, and no peer-reviewed study has specifically tracked grocery-bag PVA through US wastewater systems at scale. Honest sustainability marketing requires precision, not overstatement.
+      </p>
+
+      <h2>The Bigger Picture</h2>
+      <p>
+        A modeling study funded by an interested party became headline news about invisible plastic pollution. A rigorous independent panel finding significant flaws in that study got far less coverage. An EPA determination affirming safety was buried in regulatory filings. The original scary number — 75% untreated — lives on in advocacy materials years later.
+      </p>
+      <p>
+        This is not an argument for complacency. The Rolsky paper forced an examination of whether PVA&apos;s biodegradability claims were based on lab conditions disconnected from real-world infrastructure. The answer, after expert review, EPA determination, and EU regulatory action: for properly formulated PVA under normal treatment conditions, the claims hold. The controversy elevated the standards of evidence required to make them. For the bag that disappears, that&apos;s probably a healthy outcome. The materials of the future will need to earn their green credentials through rigorous, certified, independent testing — not marketing copy. The debate over PVA has pushed exactly in that direction.
+      </p>
+      <p>
+        Solubelle® is a US distributor of PVA water-soluble grocery bags certified to ASTM D6400, EN 13432, and {SPECS.fda}. See our <Link href="/certifications" style={{ color: '#1E8CB5', fontWeight: 600 }}>Certifications page</Link> for full citations and lab reports.
+      </p>
+    </>
+  ),
+
   'pva-bags-vs-compostable-bags': (
     <>
       <p>Walk into any eco-forward grocery store and you&apos;ll find one of two things at the checkout: PLA compostable bags or PVA water-soluble bags. Both are marketed as the sustainable alternative to plastic. But they work very differently — and only one of them actually solves the problem for most shoppers.</p>
