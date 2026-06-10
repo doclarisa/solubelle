@@ -86,6 +86,17 @@ export default function BlogPage() {
       {/* Post grid */}
       <section style={{ padding: '72px 0 80px' }}>
         <div className="container-max">
+          <Link href="/dissolvable-grocery-bags-guide" style={{ textDecoration: 'none', display: 'block', marginBottom: 36 }}>
+            <div style={{ background: SKY, border: '1.5px solid #cdeaf6', borderRadius: 16, padding: '24px 28px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
+              <div>
+                <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', color: OCEAND }}>Start here</span>
+                <h2 style={{ fontSize: 19, fontWeight: 800, color: INK, margin: '6px 0 0' }}>
+                  Dissolvable Grocery Bags: The Complete 2026 Guide
+                </h2>
+              </div>
+              <span style={{ fontSize: 14, fontWeight: 700, color: OCEAND, whiteSpace: 'nowrap' }}>Read the guide →</span>
+            </div>
+          </Link>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 28 }}>
             {posts.map((post) => (
               <Link

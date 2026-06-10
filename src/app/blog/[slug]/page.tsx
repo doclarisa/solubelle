@@ -274,6 +274,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             article th { background: #EAF9F2; font-weight: 700; font-size: 14px; }
             article tr:nth-child(even) td { background: #f9fafb; }
           `}</style>
+          <div style={{ background: '#EAF7FB', border: '1.5px solid #cdeaf6', borderRadius: 14, padding: '1.25rem 1.5rem', marginBottom: '2rem', fontSize: 16 }}>
+            New to dissolvable bags? Start with our{' '}
+            <Link href="/dissolvable-grocery-bags-guide" style={{ color: OCEAND, fontWeight: 700 }}>
+              complete guide to dissolvable grocery bags
+            </Link>{' '}
+            for an overview of how they work, safety, legality, and switching your store.
+          </div>
+
           {content[slug]}
         </div>
       </article>

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/for-retailers', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/faq', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/blog', priority: 0.85, changeFrequency: 'weekly' as const },
+    { path: '/dissolvable-grocery-bags-guide', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/blog/pva-bags-vs-compostable-bags', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/blog/plastic-bag-bans-what-retailers-need-to-know', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/blog/what-happens-when-pva-bag-dissolves', priority: 0.8, changeFrequency: 'monthly' as const },
