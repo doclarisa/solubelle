@@ -126,11 +126,10 @@ export default function HomePage() {
       </section>
 
       {/* ── 2. TRUST BAR ────────────────────────────────────── */}
-      <div style={{
+      <div className="trust-bar" style={{
         background: OCEAN,
-        padding: '14px 52px',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        gap: 32, flexWrap: 'wrap',
+        flexWrap: 'wrap',
       }}>
         {[SPECS.fdaShort, 'ASTM D6400', 'EN13432', 'Zero microplastics', 'Food-grade safe', 'Marine biodegradable'].map((item) => (
           <span key={item} style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#fff', whiteSpace: 'nowrap' }}>
@@ -156,8 +155,7 @@ export default function HomePage() {
           </FadeInSection>
 
           <FadeInSection delay={100}>
-            <div style={{
-              display: 'grid', gridTemplateColumns: '1fr 1fr',
+            <div className="grid-2col" style={{
               borderRadius: 24, overflow: 'hidden',
               border: '2px solid #d4ede5', marginTop: 52,
             }}>
@@ -216,14 +214,13 @@ export default function HomePage() {
       </section>
 
       {/* ── 4. HOPE / NATURE IMAGE ──────────────────────────── */}
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 480 }}>
+      <section className="grid-2col" style={{ minHeight: 480 }}>
 
         {/* Left half — solid background, fully readable text */}
         <FadeInSection>
-          <div style={{
+          <div className="hope-text" style={{
             background: MINT,
             display: 'flex', flexDirection: 'column', justifyContent: 'center',
-            padding: '72px 60px',
             height: '100%', boxSizing: 'border-box',
           }}>
             <Eyebrow>Our promise</Eyebrow>
@@ -331,7 +328,7 @@ export default function HomePage() {
             </div>
           </FadeInSection>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginTop: 12 }}>
+          <div className="grid-4up" style={{ gap: 20, marginTop: 12 }}>
             {[
               { n: '1', title: 'Use normally', desc: 'Holds up to 12 lbs. Rain-resistant. Works at checkout, farmers markets, and produce sections.' },
               { n: '2', title: 'Add water', desc: 'Drop in hot water at home — your sink, a glass, or a bucket. No facility needed.' },
@@ -505,7 +502,7 @@ export default function HomePage() {
             </div>
           </FadeInSection>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3up" style={{ gap: 20 }}>
             {[
               { title: 'No microplastics — verified', desc: 'FTIR analysis confirms zero microplastic or nano-plastic generation at any stage of dissolution.', bg: MINT },
               { title: 'No industrial composting', desc: 'Compostable PLA bags require special facilities that 91% of Americans can\'t access. Ours dissolve under your tap.', bg: SKY },
@@ -540,7 +537,7 @@ export default function HomePage() {
             </div>
           </FadeInSection>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
+          <div className="grid-4up" style={{ gap: 16 }}>
             {[
               { icon: '🏪', label: 'Grocery stores' },
               { icon: '🥬', label: 'Farmers markets' },
@@ -634,7 +631,7 @@ export default function HomePage() {
       {/* ── 12. OUR STORY ───────────────────────────────────── */}
       <section style={{ background: SAND, padding: '88px 0 80px' }}>
         <div className="container-max">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', maxWidth: 1040, margin: '0 auto' }}>
+          <div className="grid-2col" style={{ gap: 60, alignItems: 'center', maxWidth: 1040, margin: '0 auto' }}>
             <FadeInSection>
               <div style={{ borderRadius: 24, overflow: 'hidden', background: MINT, minHeight: 380, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ padding: '48px 40px', textAlign: 'center' }}>
@@ -677,8 +674,8 @@ export default function HomePage() {
       </section>
 
       {/* ── 13. CONTACT / CTA ───────────────────────────────── */}
-      <section id="contact" style={{ background: `linear-gradient(135deg, ${LEAFD} 0%, ${OCEAND} 100%)`, padding: '80px 52px' }}>
-        <div style={{ maxWidth: 1040, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
+      <section id="contact" className="cta-bg" style={{ background: `linear-gradient(135deg, ${LEAFD} 0%, ${OCEAND} 100%)` }}>
+        <div className="grid-2col" style={{ maxWidth: 1040, margin: '0 auto', gap: 60, alignItems: 'center' }}>
           <FadeInSection>
             <Eyebrow color="#7CCB8A">Get started</Eyebrow>
             <h2 style={{ fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)', fontWeight: 800, color: '#fff', lineHeight: 1.2, marginBottom: 20 }}>
