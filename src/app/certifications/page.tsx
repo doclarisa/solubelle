@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FadeInSection from '@/components/FadeInSection';
+import { SPECS } from '@/lib/specs';
 
 export const metadata: Metadata = {
   title: 'Certifications | Solubelle® PVA Bag Safety & Standards',
@@ -35,9 +36,9 @@ const certs = [
   },
   {
     icon: '🌴',
-    name: 'California AB 2762 Compliance',
+    name: SPECS.caBagLaw.name,
     subtitle: 'California Bag Law Compliance',
-    desc: 'Our bags meet the requirements of California AB 2762 governing reusable grocery bags and the state\'s restrictions on single-use plastic bags. Suitable for retail use in California and states with similar legislation.',
+    desc: SPECS.caBagLaw.desc,
   },
 ];
 

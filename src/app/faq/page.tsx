@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FAQClient from './FAQClient';
+import { SPECS } from '@/lib/specs';
 
 export const metadata: Metadata = {
   title: 'FAQ | Water-Soluble Bag Questions Answered | Solubelle®',
@@ -16,7 +17,7 @@ const faqSchema = {
     { '@type': 'Question', name: 'Will rain dissolve my bag before I get to the store?', acceptedAnswer: { '@type': 'Answer', text: "No. Our standard bags are cold-water resistant up to approximately 60°F. Rain won't dissolve them. Hot water (above 140°F) is needed to fully dissolve in minutes." } },
     { '@type': 'Question', name: 'What happens if I accidentally put it in the washing machine?', acceptedAnswer: { '@type': 'Answer', text: 'Cold-wash cycles are typically fine. A hot wash cycle may partially dissolve the bag — avoid hot water washes.' } },
     { '@type': 'Question', name: 'Is PVA the same as a microplastic?', acceptedAnswer: { '@type': 'Answer', text: 'No. PVA is not classified as a microplastic. It dissolves in water and biodegrades in aerobic environments. Unlike polyethylene, it does not fragment into persistent micro-particles.' } },
-    { '@type': 'Question', name: 'How long does it take to dissolve?', acceptedAnswer: { '@type': 'Answer', text: 'Hot water grade (60°C+): 2–5 minutes. Cold water grade: 10–30 minutes. Full environmental biodegradation in aerobic conditions: days to weeks.' } },
+    { '@type': 'Question', name: 'How long does it take to dissolve?', acceptedAnswer: { '@type': 'Answer', text: `In hot water (${SPECS.dissolution.hotWaterTemp}): ${SPECS.dissolution.hotWaterTime}. In cold or room-temperature water: ${SPECS.dissolution.coldWaterTime}. Full environmental biodegradation in aerobic conditions: days to weeks.` } },
     { '@type': 'Question', name: 'Are they certified?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Our bags meet ASTM D6400 standards for biodegradable materials. Raw materials are FDA-recognized safe. See our Certifications page for full documentation.' } },
     { '@type': 'Question', name: 'What about the ASU wastewater study?', acceptedAnswer: { '@type': 'Answer', text: "The 2021 ASU/Rolsky study found that PVA does not fully biodegrade in all wastewater treatment plants. This is a real finding we take seriously. We're working with enhanced-biodegradability suppliers and monitoring research. Full transparency: this science is evolving." } },
     { '@type': 'Question', name: 'Can I use them for hot food?', acceptedAnswer: { '@type': 'Answer', text: 'Our bags are not designed for hot food applications. For grocery/retail use, they are well within safe temperature parameters.' } },

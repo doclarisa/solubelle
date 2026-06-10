@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import FadeInSection from '@/components/FadeInSection';
+import { SPECS } from '@/lib/specs';
 
 export const metadata: Metadata = {
   title: 'Dissolvable Grocery Bags for US Retailers | Solubelle®',
@@ -40,37 +41,14 @@ export default function HomePage() {
     <div style={{ fontFamily: "'Manrope', system-ui, sans-serif", background: OFF, color: INK }}>
 
       {/* ── 1. HERO ──────────────────────────────────────────── */}
-      <section style={{
-        position: 'relative',
-        overflow: 'hidden',
-        minHeight: 580,
-        display: 'flex',
-        alignItems: 'center',
-      }}>
-        {/* Background — clear turquoise water */}
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <Image
-            src="/ocean1.png"
-            alt=""
-            fill
-            priority
-            quality={88}
-            sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
-          />
-        </div>
+      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 580 }}>
 
-        {/* Fade overlay: solid offwhite left → transparent right */}
-        <div aria-hidden="true" style={{
-          position: 'absolute', inset: 0, zIndex: 1,
-          background: 'linear-gradient(to right, rgba(254,252,247,.97) 0%, rgba(254,252,247,.93) 52%, rgba(254,252,247,.3) 75%, rgba(254,252,247,0) 100%)',
-        }} />
-
-        {/* Two-column content grid */}
-        <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1240, margin: '0 auto', padding: '72px 52px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
-
-          {/* Left — text */}
-          <div>
+        {/* Left half — solid background, fully readable text */}
+        <div style={{
+          display: 'flex', flexDirection: 'column', justifyContent: 'center',
+          padding: '72px 52px',
+          boxSizing: 'border-box',
+        }}>
             {/* Pill badge */}
             <span style={{
               display: 'inline-flex', alignItems: 'center', gap: 7,
@@ -82,7 +60,7 @@ export default function HomePage() {
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M7 1C7 1 2 5.5 2 8.5a5 5 0 0010 0C12 5.5 7 1 7 1z" fill={LEAF} fillOpacity=".25" stroke={LEAFD} strokeWidth="1.2"/>
               </svg>
-              FDA-approved · PVA water-soluble · Ships from the US
+              {SPECS.fda} · PVA water-soluble · Ships from the US
             </span>
 
             <h1 style={{
@@ -104,7 +82,7 @@ export default function HomePage() {
             {/* Checklist */}
             <ul style={{ listStyle: 'none', padding: 0, marginBottom: 36, display: 'flex', flexDirection: 'column', gap: 10 }}>
               {[
-                'Dissolves completely in hot water in under 2 minutes',
+                SPECS.dissolution.hotWaterFull,
                 'Zero microplastics — verified by FTIR analysis',
                 'FDA 21 CFR 175.300 food-safe materials',
                 'Rain-resistant until you choose to dissolve it',
@@ -127,51 +105,17 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right — frosted dissolve-steps card */}
-          <div style={{
-            background: 'rgba(255,255,255,.82)',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            borderRadius: 24,
-            padding: '36px 32px',
-            border: '1.5px solid rgba(58,174,216,.2)',
-            boxShadow: '0 20px 56px rgba(30,140,181,.1)',
-          }}>
-            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: LEAFD, marginBottom: 22 }}>
-              How it dissolves
-            </p>
-
-            {[
-              { n: '1', title: 'Use it normally', desc: 'Holds up to 12 lbs. Rain-safe. Works exactly like a plastic bag until you\'re ready.' },
-              { n: '2', title: 'Add hot water', desc: 'Drop it in a sink or glass of hot water. No special facilities needed.' },
-              { n: '3', title: 'Watch it dissolve', desc: 'The PVA polymer chains break apart completely within 90 seconds.' },
-            ].map((step) => (
-              <div key={step.n} style={{ display: 'flex', gap: 16, marginBottom: 20 }}>
-                <div style={{
-                  width: 40, height: 40, borderRadius: '50%',
-                  background: OCEAN, color: '#fff',
-                  fontSize: '1.1rem', fontWeight: 800,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  flexShrink: 0,
-                }}>
-                  {step.n}
-                </div>
-                <div>
-                  <p style={{ fontWeight: 700, fontSize: 15, color: INK, margin: '0 0 4px' }}>{step.title}</p>
-                  <p style={{ fontSize: 14, color: INKL, lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
-                </div>
-              </div>
-            ))}
-
-            {/* Zero residue confirmation */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 18px', background: MINT, borderRadius: 12, marginTop: 8 }}>
-              <div style={{ width: 32, height: 32, borderRadius: '50%', background: LEAF, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <span style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 800 }}>0</span>
-              </div>
-              <p style={{ fontSize: 14, fontWeight: 700, color: LEAFD, margin: 0 }}>Zero residue — independently verified. Safe in water, soil &amp; marine environments.</p>
-            </div>
-          </div>
-
+        {/* Right half — hero photo, full bleed */}
+        <div style={{ position: 'relative', minHeight: 480 }}>
+          <Image
+            src="/heroimg1.png"
+            alt="Solubelle PVA dissolvable grocery bag dissolving in water"
+            fill
+            priority
+            quality={88}
+            sizes="50vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
         </div>
       </section>
 
@@ -182,7 +126,7 @@ export default function HomePage() {
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         gap: 32, flexWrap: 'wrap',
       }}>
-        {['FDA-approved material', 'ASTM D6400', 'EN13432', 'Zero microplastics', 'Food-grade safe', 'Marine biodegradable'].map((item) => (
+        {[SPECS.fdaShort, 'ASTM D6400', 'EN13432', 'Zero microplastics', 'Food-grade safe', 'Marine biodegradable'].map((item) => (
           <span key={item} style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#fff', whiteSpace: 'nowrap' }}>
             <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'rgba(255,255,255,.7)', display: 'inline-block' }} />
             {item}
@@ -195,7 +139,7 @@ export default function HomePage() {
         <div className="container-max">
           <FadeInSection>
             <div style={{ textAlign: 'center', marginBottom: 16 }}>
-              <Eyebrow>Not Compostable. Not Biodegradable. Dissolvable.</Eyebrow>
+              <Eyebrow>Not waiting for a compost facility. Not hoping it gets recycled. Dissolvable — at home, in minutes.</Eyebrow>
               <h2 style={{ fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)', fontWeight: 800, color: INK, lineHeight: 1.15, marginBottom: 16 }}>
                 See Why Traditional Bags<br />Just Don&apos;t Cut It
               </h2>
@@ -249,7 +193,7 @@ export default function HomePage() {
                   ['Dissolves under your tap', 'Recycling reality'],
                   ['Non-toxic, safe for all life', 'Wildlife impact'],
                   ['Compliant in all 50 states', 'Legislation status'],
-                  ['FDA-approved, zero residue', 'Final residue'],
+                  ['FDA-compliant, zero residue', 'Final residue'],
                 ].map(([val, label]) => (
                   <div key={label} style={{ display: 'flex', gap: 12, marginBottom: 18, paddingBottom: 18, borderBottom: '1px solid rgba(61,140,65,.12)' }}>
                     <span style={{ color: LEAF, fontSize: 16, fontWeight: 700, flexShrink: 0 }}>✓</span>
@@ -385,7 +329,7 @@ export default function HomePage() {
             {[
               { n: '1', title: 'Use normally', desc: 'Holds up to 12 lbs. Rain-resistant. Works at checkout, farmers markets, and produce sections.' },
               { n: '2', title: 'Add water', desc: 'Drop in hot water at home — your sink, a glass, or a bucket. No facility needed.' },
-              { n: '3', title: 'It dissolves', desc: 'PVA polymer chains break apart in under 90 seconds. Completely gone — not just smaller.' },
+              { n: '3', title: 'It dissolves', desc: `PVA polymer chains break apart in ${SPECS.dissolution.hotWaterTime}. Completely gone — not just smaller.` },
               { n: '0', title: 'Zero residue', desc: 'What remains is non-toxic water-soluble vinyl alcohol — safe in waterways and soil.' },
             ].map((step, i) => (
               <FadeInSection key={step.n} delay={i * 80}>
@@ -439,23 +383,23 @@ export default function HomePage() {
                 dims: '12″ × 20″ · T-shirt style',
                 desc: 'Fits existing checkout dispensers. Holds 10–12 lbs. The drop-in replacement your store needs.',
                 price: 'From $18 / 100 bags',
-                moq: 'MOQ 500 units',
+                moq: `MOQ ${SPECS.moq.wholesale}`,
               },
               {
                 bg: `linear-gradient(135deg, ${SKY}, #c5ecfa)`,
                 name: 'Produce Bag',
                 dims: '10″ × 14″ · Ultra-thin',
-                desc: 'Transparent, lightweight. Perfect for bulk bins and produce sections. Dissolves in under 60 seconds.',
+                desc: 'Transparent, lightweight. Perfect for bulk bins and produce sections. Same hot-water dissolving formula — rain and produce-moisture resistant.',
                 price: 'From $13 / 100 bags',
-                moq: 'MOQ 500 units',
+                moq: `MOQ ${SPECS.moq.wholesale}`,
               },
               {
                 bg: `linear-gradient(135deg, #e8f5e9, ${MINT})`,
                 name: 'Heavy-Duty Shopper',
                 dims: '14″ × 22″ · Reinforced handles',
-                desc: 'Rated to 15 lbs. Extended rain resistance. Ideal for premium markets and eco-retailers.',
+                desc: `Rated to ${SPECS.capacity.heavyDuty}. Extended rain resistance. Ideal for premium markets and eco-retailers.`,
                 price: 'From $24 / 100 bags',
-                moq: 'MOQ 500 units',
+                moq: `MOQ ${SPECS.moq.wholesale}`,
               },
             ].map((p, i) => (
               <FadeInSection key={p.name} delay={i * 80}>
@@ -561,8 +505,8 @@ export default function HomePage() {
               { title: 'No industrial composting', desc: 'Compostable PLA bags require special facilities that 91% of Americans can\'t access. Ours dissolve under your tap.', bg: SKY },
               { title: 'No recycling required', desc: 'Only 1–3% of plastic bags are actually recycled. Ours don\'t need a recycling bin — they need a sink.', bg: MINT },
               { title: 'Safe everywhere', desc: 'Non-toxic in soil, freshwater, and marine environments. Tested and certified by independent labs.', bg: SKY },
-              { title: 'Same strength as plastic', desc: 'Holds 12–15 lbs. Rain-resistant. Handles wet produce without issue. Zero compromise on performance.', bg: MINT },
-              { title: 'Custom branded, any size', desc: 'Full-color logo printing. 4 standard sizes. MOQ 1,000 units. Typical lead time 3–4 weeks.', bg: SKY },
+              { title: 'Same strength as plastic', desc: `Holds up to ${SPECS.capacity.heavyDuty} in our Heavy-Duty Shopper. Rain-resistant. Handles wet produce without issue. Zero compromise on performance.`, bg: MINT },
+              { title: 'Custom branded, any size', desc: `Full-color logo printing. 4 standard sizes. MOQ ${SPECS.moq.customBranded}. Typical lead time ${SPECS.leadTime.customBranded}.`, bg: SKY },
             ].map((card, i) => (
               <FadeInSection key={card.title} delay={i * 60}>
                 <div style={{ border: '1.5px solid #d0ece0', borderRadius: 18, padding: '28px 24px', background: '#fff' }}>
@@ -636,7 +580,7 @@ export default function HomePage() {
             {[
               {
                 q: 'Will it dissolve if it gets rained on?',
-                a: 'No. Solubelle bags are rain-resistant under normal conditions — light rain, wet produce, and damp hands won\'t dissolve them. Dissolution requires sustained contact with hot water (above 60°C / 140°F) for full dissolution in under 2 minutes.',
+                a: SPECS.dissolution.rainResistant,
               },
               {
                 q: 'Is it safe for food and produce contact?',
@@ -648,15 +592,15 @@ export default function HomePage() {
               },
               {
                 q: 'How is this different from compostable bags?',
-                a: 'Compostable bags (usually PLA) require industrial composting at 140°F+ — facilities that 91% of Americans can\'t access. Our bags dissolve at home under your tap in under 2 minutes. No facilities needed.',
+                a: `Compostable bags (usually PLA) require industrial composting at 140°F+ — facilities that 91% of Americans can't access. Our bags dissolve at home under your tap in ${SPECS.dissolution.hotWaterTime}. No facilities needed.`,
               },
               {
                 q: 'What are the minimum order quantities?',
-                a: 'Wholesale starts at 1,000 units per SKU. Sample kits (mixed SKUs) are available free for qualified retailers. Custom branded bags start at 1,000 units with a 3–4 week lead time.',
+                a: `Wholesale starts at ${SPECS.moq.wholesale} per SKU. Sample kits (mixed SKUs) are available free for qualified retailers. Custom branded bags start at ${SPECS.moq.customBranded} with a ${SPECS.leadTime.customBranded} lead time.`,
               },
               {
                 q: 'Can you print our logo on the bags?',
-                a: 'Yes. Full-color logo printing is available on all SKUs at 1,000 unit MOQ. We handle the print setup — just send your logo files. Typical lead time is 3–4 weeks from artwork approval.',
+                a: `Yes. Full-color logo printing is available on all SKUs at a ${SPECS.moq.customBranded} MOQ. We handle the print setup — just send your logo files. Typical lead time is ${SPECS.leadTime.customBranded} from artwork approval.`,
               },
             ].map((faq, i) => (
               <FadeInSection key={faq.q} delay={i * 50}>
@@ -813,7 +757,7 @@ export default function HomePage() {
                 name: 'Will PVA bags dissolve if they get rained on?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'No. Solubelle bags are rain-resistant under normal conditions. Dissolution requires sustained contact with hot water above 60°C for full dissolution in under 2 minutes.',
+                  text: SPECS.dissolution.rainResistant,
                 },
               },
               {
@@ -837,7 +781,7 @@ export default function HomePage() {
                 name: 'How are PVA bags different from compostable bags?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Compostable bags require industrial composting at 140°F+ which 91% of Americans cannot access. Our bags dissolve at home under your tap in under 2 minutes — no facility needed.',
+                  text: `Compostable bags require industrial composting at 140°F+ which 91% of Americans cannot access. Our bags dissolve at home under your tap in ${SPECS.dissolution.hotWaterTime} — no facility needed.`,
                 },
               },
             ],

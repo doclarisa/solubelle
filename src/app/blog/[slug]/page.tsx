@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { posts } from '../page';
+import { SPECS } from '@/lib/specs';
 
 /* ── Static params for all posts ───────────────────────────── */
 export function generateStaticParams() {
@@ -35,7 +36,7 @@ const content: Record<string, React.ReactNode> = {
       <p>Compostable bags are most often made from PLA (polylactic acid), derived from corn starch or sugarcane. They&apos;re certified under ASTM D6400 or EN13432, which means they break down under <strong>industrial composting conditions</strong>: sustained temperatures above 140°F (60°C), specific humidity, and microbial activity — for 90+ days.</p>
       <p>The problem: industrial composting facilities are accessible to fewer than 9% of Americans. That means 91% of compostable bags end up in landfills, where they don&apos;t decompose meaningfully at all — because landfills are anaerobic (no oxygen) and never reach composting temperatures.</p>
       <h2>What Are PVA Bags?</h2>
-      <p>PVA (polyvinyl alcohol) bags dissolve in water. Hot water (above 60°C / 140°F) dissolves them in under 2 minutes. Cold water dissolves them more slowly. Either way, the dissolution happens at home — no facility required.</p>
+      <p>PVA (polyvinyl alcohol) bags dissolve in water. Hot water ({SPECS.dissolution.hotWaterTemp}) dissolves them in {SPECS.dissolution.hotWaterTime}. Cold water dissolves them more slowly, in {SPECS.dissolution.coldWaterTime}. Either way, the dissolution happens at home — no facility required.</p>
       <p>The polymer chains in PVA break apart into water, CO₂, and trace amounts of water-soluble vinyl alcohol. There are no fragments, no pellets, no persistent residue. FTIR (Fourier-transform infrared spectroscopy) analysis confirms zero remaining polymer chains after dissolution.</p>
       <h2>Side-by-Side Comparison</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '1.5rem' }}>
@@ -137,7 +138,7 @@ const content: Record<string, React.ReactNode> = {
       <h2>Week 2: Train Your Staff</h2>
       <p>The checkout counter demo is your single best sales tool. When a customer asks &quot;what is this?&quot;, your staff should be able to say:</p>
       <blockquote style={{ borderLeft: '4px solid #5DAE61', paddingLeft: '1rem', color: '#3D4748', fontStyle: 'italic' }}>
-        &quot;It&apos;s a bag that dissolves in hot water — completely, in about 90 seconds. No plastic, no microplastics, nothing left behind. Drop it in your sink when you&apos;re done unpacking.&quot;
+        &quot;It&apos;s a bag that dissolves in hot water — completely, in {SPECS.dissolution.hotWaterTime}. No plastic, no microplastics, nothing left behind. Drop it in your sink when you&apos;re done unpacking.&quot;
       </blockquote>
       <p>Keep a glass of water at the service desk for demo requests. Every demo we&apos;ve seen goes the same way: the customer stops, watches, and says &quot;that&apos;s incredible.&quot;</p>
       <h2>Week 3: Announce to Customers</h2>
@@ -146,7 +147,7 @@ const content: Record<string, React.ReactNode> = {
       <h2>Week 4: Place Your First Wholesale Order</h2>
       <p>After a week of customer-facing use, you&apos;ll know your weekly volume. Standard starting quantity for a single-location grocery is 2,000–5,000 bags/month depending on transaction volume. We offer net-30 terms for qualified accounts and can ship within 3–5 business days from our US warehouse.</p>
       <h2>Ongoing: Reorder Before You Run Out</h2>
-      <p>Set a reorder trigger at 20% of your stock level. We recommend setting up a standing monthly order for predictable stores — it gets you preferential pricing and guarantees supply. Custom branded bags with your logo require 3–4 weeks lead time and a 1,000 unit minimum.</p>
+      <p>Set a reorder trigger at 20% of your stock level. We recommend setting up a standing monthly order for predictable stores — it gets you preferential pricing and guarantees supply. Custom branded bags with your logo require a {SPECS.leadTime.customBranded} lead time and a {SPECS.moq.customBranded} minimum.</p>
     </>
   ),
 

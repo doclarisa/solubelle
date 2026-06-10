@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { SPECS } from '@/lib/specs';
 
 const faqs = [
   {
@@ -22,7 +23,7 @@ const faqs = [
   },
   {
     q: 'How long does it take to dissolve?',
-    a: 'Hot water grade (60°C+): 2–5 minutes. Cold water grade: 10–30 minutes. Full environmental biodegradation in aerobic conditions: days to weeks.',
+    a: `In hot water (${SPECS.dissolution.hotWaterTemp}): ${SPECS.dissolution.hotWaterTime}. In cold or room-temperature water: ${SPECS.dissolution.coldWaterTime}. Full environmental biodegradation in aerobic conditions: days to weeks.`,
   },
   {
     q: 'Are they certified?',

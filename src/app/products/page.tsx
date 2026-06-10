@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FadeInSection from '@/components/FadeInSection';
+import { SPECS } from '@/lib/specs';
 
 export const metadata: Metadata = {
   title: 'Shop Water-Soluble Bags | Solubelle® Products',
@@ -28,8 +29,8 @@ const products = [
   {
     name: 'Produce Bag',
     sub: 'Ultra-thin · 10″ × 14″',
-    description: 'Crystal-clear, ultra-thin film for loose fruits, vegetables, and bulk items. Cold-water grade.',
-    detail: 'Transparent so produce is visible at a glance. Dissolves at room temperature. Designed for the produce aisle.',
+    description: 'Crystal-clear, ultra-thin film for loose fruits, vegetables, and bulk items. Same hot-water dissolving formula as every Solubelle bag.',
+    detail: 'Transparent so produce is visible at a glance. Rain- and produce-moisture resistant — full dissolution requires hot water, not a wet countertop. Designed for the produce aisle.',
     sizes: 'Available in rolls of 100 or 500',
     accent: '#4CAF50',
     accentLight: '#e8f5e9',
@@ -44,7 +45,7 @@ const products = [
   {
     name: 'Heavy-Duty Shopper',
     sub: '14″ × 22″ · Reinforced',
-    description: 'For loads up to 20 lbs. Wide gusset and reinforced handle seams for mixed or oversized grocery runs.',
+    description: `For loads up to ${SPECS.capacity.heavyDuty}. Wide gusset and reinforced handle seams for mixed or oversized grocery runs.`,
     detail: 'Makes a statement at any market or large-format store. Same dissolution properties — just built for heavier use.',
     sizes: 'Available in packs of 50 or 250',
     accent: '#1A7DC4',
@@ -133,7 +134,7 @@ export default function ProductsPage() {
                 Put your store&apos;s name, logo, or messaging on every bag. Custom printing turns each checkout into a brand moment — and every dissolved bag into a story your customers tell.
               </p>
               <p style={{ color: '#374151', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-                Minimum order quantities apply. Most orders ship within 4–6 weeks of artwork approval.
+                Minimum order quantity is {SPECS.moq.customBranded}. Most orders ship within {SPECS.leadTime.customBranded} of artwork approval.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                 {['1–4 color printing available', 'Pantone color matching', 'Custom sizing on request', 'Net-30 terms for qualified accounts'].map((item) => (

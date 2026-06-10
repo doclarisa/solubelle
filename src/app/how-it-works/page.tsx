@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import FadeInSection from '@/components/FadeInSection';
+import { SPECS } from '@/lib/specs';
 
 export const metadata: Metadata = {
   title: 'How PVA Water-Soluble Bags Work | Solubelle®',
@@ -75,14 +76,14 @@ export default function HowItWorksPage() {
                 <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.2rem', marginBottom: '2rem', color: '#fff' }}>Dissolution Times</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   <div style={{ background: '#1A7DC4', borderRadius: 10, padding: '1.25rem 1.5rem' }}>
-                    <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#bde0f7', marginBottom: '0.4rem' }}>Cold Water Grade</p>
-                    <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: '1.75rem' }}>10–30 min</p>
-                    <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '0.9rem', color: '#bde0f7' }}>Room temperature water</p>
+                    <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#bde0f7', marginBottom: '0.4rem' }}>Cold / Room-Temp Water</p>
+                    <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: '1.75rem' }}>{SPECS.dissolution.coldWaterTime}</p>
+                    <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '0.9rem', color: '#bde0f7' }}>This is what makes the bag rain- and moisture-resistant in normal use</p>
                   </div>
                   <div style={{ background: '#4CAF50', borderRadius: 10, padding: '1.25rem 1.5rem' }}>
-                    <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#c8e6c9', marginBottom: '0.4rem' }}>Hot Water Grade (60°C+)</p>
-                    <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: '1.75rem' }}>2–5 min</p>
-                    <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '0.9rem', color: '#c8e6c9' }}>Above 140°F</p>
+                    <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#c8e6c9', marginBottom: '0.4rem' }}>Hot Water ({SPECS.dissolution.hotWaterTemp})</p>
+                    <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: '1.75rem' }}>{SPECS.dissolution.hotWaterTime}</p>
+                    <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '0.9rem', color: '#c8e6c9' }}>Full dissolution — every SKU, same formula</p>
                   </div>
                 </div>
               </div>
@@ -91,13 +92,13 @@ export default function HowItWorksPage() {
               <p style={{ color: '#4CAF50', fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Section 2</p>
               <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.5rem,3vw,2.25rem)', color: '#1a1a1a', marginBottom: '1.25rem' }}>What Happens When It Gets Wet?</h2>
               <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.05rem', color: '#374151', lineHeight: 1.75, marginBottom: '1.25rem' }}>
-                Water molecules penetrate the PVA polymer matrix, breaking the hydrogen bonds that hold the material together. At room temperature, this process takes 10–30 minutes. Heat accelerates it significantly — at 60°C or above, the bag dissolves in 2–5 minutes.
+                Water molecules penetrate the PVA polymer matrix, breaking the hydrogen bonds that hold the material together. At room temperature, this process takes {SPECS.dissolution.coldWaterTime}. Heat accelerates it significantly — at {SPECS.dissolution.hotWaterTemp}, the bag dissolves in {SPECS.dissolution.hotWaterTime}.
               </p>
               <blockquote className="pull-quote" style={{ margin: '2rem 0', borderLeftColor: '#1A7DC4', color: '#1A7DC4', fontWeight: 600 }}>
                 &ldquo;Rain won&apos;t dissolve it — a glass of hot water will.&rdquo;
               </blockquote>
               <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.05rem', color: '#374151', lineHeight: 1.75 }}>
-                Our standard cold-water grade bags are rain-resistant up to approximately 60°F ambient moisture. A brief shower or damp hands won&apos;t compromise the bag — it&apos;s designed for real-world grocery use.
+                Every Solubelle bag — including the produce bag — uses the same formula and is rain-resistant under normal conditions. A brief shower, wet produce, or damp hands won&apos;t compromise the bag; full dissolution takes {SPECS.dissolution.coldWaterTime} in cold water, or {SPECS.dissolution.hotWaterTime} in hot water.
               </p>
             </FadeInSection>
           </div>
