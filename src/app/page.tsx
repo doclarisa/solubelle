@@ -106,15 +106,19 @@ export default function HomePage() {
         {/* Right — hero photo, full bleed to the viewport edge */}
         <div className="hero-photo">
           <div style={{ position: 'absolute', inset: 0, animation: 'float 8s ease-in-out infinite' }}>
-            <Image
-              src="/heroimg1.png"
-              alt="Solubelle PVA dissolvable grocery bag dissolving in water"
-              fill
-              priority
-              quality={88}
-              sizes="(max-width: 900px) 100vw, 50vw"
-              style={{ objectFit: 'cover', objectPosition: 'var(--hero-photo-pos, center)', transform: 'scale(1.08)' }}
-            />
+            {['/heroimg1.png', '/heroimg2.png', '/heroimg3.png', '/heroimg4.png'].map((src, i) => (
+              <div className="hero-frame" key={src}>
+                <Image
+                  src={src}
+                  alt={i === 0 ? 'Solubelle PVA dissolvable grocery bag dissolving in water' : ''}
+                  fill
+                  priority={i === 0}
+                  quality={88}
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                  style={{ objectFit: 'cover', objectPosition: 'var(--hero-photo-pos, center)', transform: 'scale(1.08)' }}
+                />
+              </div>
+            ))}
           </div>
           {/* Soft scrim to blend the seam between photo and text column */}
           <div aria-hidden="true" className="hero-seam" />

@@ -187,6 +187,26 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   background: linear-gradient(to right, var(--offwhite), rgba(254, 252, 247, 0));
 }
+
+/* ── Hero photo cross-fade ─────────────────────────────────── */
+.hero-frame {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: hero-cycle 20s infinite;
+}
+.hero-frame:nth-child(1) { animation-delay: 0s; }
+.hero-frame:nth-child(2) { animation-delay: 5s; }
+.hero-frame:nth-child(3) { animation-delay: 10s; }
+.hero-frame:nth-child(4) { animation-delay: 15s; }
+@keyframes hero-cycle {
+  0%, 15%  { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-frame { animation: none; opacity: 0; }
+  .hero-frame:nth-child(1) { opacity: 1; }
+}
 @media (min-width: 1700px) {
   .hero-photo { --hero-photo-pos: 58% center; }
 }
