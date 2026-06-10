@@ -13,7 +13,7 @@ const products = [
   {
     name: 'Standard Grocery Bag',
     sub: 'T-shirt style · 12″ × 20″',
-    description: 'The drop-in replacement for conventional checkout bags. Holds up to 12 lbs and dissolves completely in hot water.',
+    description: `The drop-in replacement for conventional checkout bags. Holds up to ${SPECS.capacity.standard} and dissolves completely in hot water.`,
     detail: 'Hot-water dissolvable. Fits any standard T-shirt bag dispenser. Perfect for grocery checkout lanes and general retail use.',
     sizes: 'Available in rolls of 50, 100, or 500',
     accent: '#1A7DC4',

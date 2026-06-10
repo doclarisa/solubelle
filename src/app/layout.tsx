@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
+import { SPECS } from "@/lib/specs";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://solubelle.com'),
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     default: 'Dissolvable Grocery Bags for US Retailers | Solubelle®',
     template: '%s | Solubelle®',
   },
-  description: 'Solubelle PVA dissolvable grocery bags dissolve completely in water — zero microplastics, zero landfill. Wholesale from 1,000 units. Free samples for retailers.',
+  description: `Solubelle PVA dissolvable grocery bags dissolve completely in water — zero microplastics, zero landfill. Wholesale from ${SPECS.moq.wholesale}. Free samples for retailers.`,
   keywords: ['water-soluble grocery bags USA', 'PVA dissolvable bags', 'plastic-free grocery bags', 'biodegradable bags no microplastics', 'dissolvable shopping bags for retailers', 'eco-friendly checkout bags', 'PVA bags for stores'],
   openGraph: {
     type: 'website',

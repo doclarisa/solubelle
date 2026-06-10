@@ -6,7 +6,7 @@ import { SPECS } from '@/lib/specs';
 
 export const metadata: Metadata = {
   title: 'Dissolvable Grocery Bags for US Retailers | Solubelle®',
-  description: 'Solubelle PVA dissolvable grocery bags dissolve completely in water — zero microplastics, zero landfill. Wholesale from 1,000 units. Free samples available.',
+  description: `Solubelle PVA dissolvable grocery bags dissolve completely in water — zero microplastics, zero landfill. Wholesale from ${SPECS.moq.wholesale}. Free samples available.`,
   alternates: { canonical: 'https://solubelle.com' },
 };
 
@@ -326,7 +326,7 @@ export default function HomePage() {
 
           <div className="grid-4up" style={{ gap: 20, marginTop: 12 }}>
             {[
-              { n: '1', title: 'Use normally', desc: 'Holds up to 12 lbs. Rain-resistant. Works at checkout, farmers markets, and produce sections.' },
+              { n: '1', title: 'Use normally', desc: `Holds up to ${SPECS.capacity.standard}. Rain-resistant. Works at checkout, farmers markets, and produce sections.` },
               { n: '2', title: 'Add water', desc: 'Drop in hot water at home — your sink, a glass, or a bucket. No facility needed.' },
               { n: '3', title: 'It dissolves', desc: `PVA polymer chains break apart in ${SPECS.dissolution.hotWaterTime}. Completely gone — not just smaller.` },
               { n: '0', title: 'Zero residue', desc: 'What remains is non-toxic water-soluble vinyl alcohol — safe in waterways and soil.' },
@@ -380,7 +380,7 @@ export default function HomePage() {
                 bg: `linear-gradient(135deg, ${MINT}, #c7f2d5)`,
                 name: 'Standard Grocery Bag',
                 dims: '12″ × 20″ · T-shirt style',
-                desc: 'Fits existing checkout dispensers. Holds 10–12 lbs. The drop-in replacement your store needs.',
+                desc: `Fits existing checkout dispensers. Holds up to ${SPECS.capacity.standard}. The drop-in replacement your store needs.`,
                 price: 'From $18 / 100 bags',
                 moq: `MOQ ${SPECS.moq.wholesale}`,
               },
@@ -681,7 +681,7 @@ export default function HomePage() {
               We&apos;ll send you a mixed sample kit — no commitment, no pitch call required. If your customers love them (they always do), we&apos;ll talk wholesale.
             </p>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {['Free sample kits for stores', 'Wholesale from 1,000 units', 'Custom branding available'].map((p) => (
+              {['Free sample kits for stores', `Wholesale from ${SPECS.moq.wholesale}`, 'Custom branding available'].map((p) => (
                 <li key={p} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 16, color: 'rgba(255,255,255,.9)', fontWeight: 500 }}>
                   <Check color="#fff" />
                   {p}

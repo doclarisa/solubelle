@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: 'Will rain dissolve my bag before I get to the store?',
-    a: "No. Our standard bags are cold-water resistant up to approximately 60°F. Rain won't dissolve them. Hot water (above 140°F) is needed to fully dissolve in minutes.",
+    a: `No. Our standard bags are cold-water resistant up to approximately 60°F. Rain won't dissolve them. Hot water (${SPECS.dissolution.hotWaterTemp}) dissolves them completely in ${SPECS.dissolution.hotWaterTime}.`,
   },
   {
     q: 'What happens if I accidentally put it in the washing machine?',
