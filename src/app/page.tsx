@@ -261,7 +261,7 @@ export default function HomePage() {
       {/* ── 5. STATS ────────────────────────────────────────── */}
       <section style={{ position: 'relative', overflow: 'hidden', padding: '88px 0 80px', background: OFF }}>
         {/* Water texture (serfer.jpg) behind 90% white overlay */}
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
           <Image
             src="/serfer.jpg"
             alt=""
@@ -535,18 +535,69 @@ export default function HomePage() {
 
           <div className="grid-4up" style={{ gap: 16 }}>
             {[
-              { icon: '🏪', label: 'Grocery stores' },
-              { icon: '🥬', label: 'Farmers markets' },
-              { icon: '♻️', label: 'Eco retailers' },
-              { icon: '🍱', label: 'Food delivery' },
-              { icon: '🎓', label: 'Universities' },
-              { icon: '🏥', label: 'Healthcare' },
-              { icon: '🐾', label: 'Pet products' },
-              { icon: '📦', label: 'E-commerce' },
+              {
+                label: 'Grocery stores',
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 9.5l1-5h16l1 5M3 9.5a2 2 0 002 2h.5a2 2 0 002-2 2 2 0 002 2 2 2 0 002-2 2 2 0 002 2 2 2 0 002-2 2 2 0 002 2H19a2 2 0 002-2M3 9.5V20h18V9.5M9 20v-5.5a1 1 0 011-1h4a1 1 0 011 1V20" />
+                ),
+              },
+              {
+                label: 'Farmers markets',
+                icon: (
+                  <>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 21c0-7.5 4.5-13 14-13 0 10.5-5.5 15-13 15-1 0-1-1-1-2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 21c3-3.5 6.5-7 9-11" />
+                  </>
+                ),
+              },
+              {
+                label: 'Eco retailers',
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                ),
+              },
+              {
+                label: 'Food delivery',
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.375 9.75h17.25M3.375 9.75A1.125 1.125 0 012.25 8.625V7.5c0-.621.504-1.125 1.125-1.125h17.25c.621 0 1.125.504 1.125 1.125v1.125c0 .621-.504 1.125-1.125 1.125M3.375 9.75v9.375A1.125 1.125 0 004.5 20.25h15a1.125 1.125 0 001.125-1.125V9.75M9 13.5h6" />
+                ),
+              },
+              {
+                label: 'Universities',
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.15a60 60 0 00-.49 6.34A48.6 48.6 0 0112 20.9a48.6 48.6 0 018.23-4.41 60 60 0 00-.49-6.34M4.26 10.15a50.7 50.7 0 00-2.66-.81A59.9 59.9 0 0112 3.5a59.9 59.9 0 0110.4 5.84c-.9.25-1.78.52-2.66.81M4.26 10.15A50.7 50.7 0 0112 13.5a50.7 50.7 0 017.74-3.35M6.75 15a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 0v-3.7A55 55 0 0112 8.44" />
+                ),
+              },
+              {
+                label: 'Healthcare',
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.1-4.5-4.69-4.5-1.93 0-3.6 1.13-4.31 2.73-.72-1.6-2.38-2.73-4.31-2.73C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                ),
+              },
+              {
+                label: 'Pet products',
+                icon: (
+                  <>
+                    <circle cx="7.5" cy="8" r="1.4" />
+                    <circle cx="16.5" cy="8" r="1.4" />
+                    <circle cx="4.8" cy="12.5" r="1.4" />
+                    <circle cx="19.2" cy="12.5" r="1.4" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 13c-2.5 0-4.7 1.8-4.7 4.1 0 1.4 1.2 2.5 2.7 2.5.9 0 1.4-.4 2-.4s1.1.4 2 .4c1.5 0 2.7-1.1 2.7-2.5C16.7 14.8 14.5 13 12 13z" />
+                  </>
+                ),
+              },
+              {
+                label: 'E-commerce',
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.36-2v.01M5.51 7.5h12.97c.58 0 1.06.43 1.12 1.01l1.26 12c.07.66-.45 1.24-1.12 1.24H4.25a1.125 1.125 0 01-1.12-1.24l1.26-12A1.125 1.125 0 015.51 7.5z" />
+                ),
+              },
             ].map((app, i) => (
               <FadeInSection key={app.label} delay={i * 50}>
                 <div style={{ background: '#fff', borderRadius: 18, padding: '28px 16px', textAlign: 'center', border: '1.5px solid #c0edda' }}>
-                  <div style={{ fontSize: 32, marginBottom: 12 }}>{app.icon}</div>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke={OCEAND} strokeWidth="1.7" aria-hidden="true" style={{ marginBottom: 12 }}>
+                    {app.icon}
+                  </svg>
                   <p style={{ fontSize: 15, fontWeight: 600, color: INK, margin: 0 }}>{app.label}</p>
                 </div>
               </FadeInSection>

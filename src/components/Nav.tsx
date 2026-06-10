@@ -10,7 +10,6 @@ const links = [
   { href: '/for-retailers', label: 'For retailers' },
   { href: '/blog',          label: 'Blog' },
   { href: '/about',         label: 'Our story' },
-  { href: '/faq',           label: 'FAQs' },
 ];
 
 export default function Nav() {
