@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import FadeInSection from '@/components/FadeInSection';
 
 export const metadata: Metadata = {
@@ -72,17 +73,64 @@ export default function AboutPage() {
           {/* Founder note */}
           <FadeInSection>
             <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '2.5rem' }}>
-              <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.25rem', color: '#0f172a', marginBottom: '1rem' }}>A note from our founder</h2>
+              <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.25rem', color: '#0f172a', marginBottom: '1rem' }}>Meet Our Founder</h2>
               <blockquote className="pull-quote">
                 <p style={{ marginBottom: '0.75rem' }}>
-                  I&apos;ve watched this industry for years. Every &quot;eco&quot; bag that came to market promised to solve the problem and ended up creating a different one. PVA is the first option I&apos;ve seen that actually does what it says — and I&apos;ve dissolved a lot of bags in a lot of glasses of water to be sure.
+                  I&apos;m a physician — a dermatologist who fought a syphilis epidemic in St. Petersburg as a single mother of three, then crossed an ocean following my second husband, and repassed all three US medical board exams in my second language.
+                </p>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  My closest friends are Greek, and for years I visited them and watched European supermarkets hand out eco-friendly bags America didn&apos;t have. I asked why — and like a doctor, I investigated.
+                </p>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  The Greek bags were compostable, but flawed. Two years of research led me to something better: PVA, a material that dissolves in water with zero microplastics. I already knew it was safe — it coats pharmaceutical capsules I&apos;ve prescribed.
                 </p>
                 <p>
-                  We&apos;re not trying to save the world with a single product. We&apos;re trying to give every retailer in America one less reason to reach for the plastic roll. That&apos;s it. That&apos;s enough.
+                  Solubelle brings these certified dissolvable bags to America, first. I&apos;ve never failed for lack of effort, only paused for the people I love. Now I&apos;m ready to give this everything.
                 </p>
               </blockquote>
-              <p style={{ marginTop: '1rem', fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: '0.9rem', color: '#374151' }}>— Solubelle Founder</p>
+              <p style={{ marginTop: '1rem', fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: '0.9rem', color: '#374151' }}>— Founder, Solubelle</p>
             </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* The Solubelle Vision */}
+      <section style={{ background: '#f8fcff' }}>
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 6', overflow: 'hidden' }}>
+          <Image
+            src="/ocean1.png"
+            alt="Clean ocean water — the future Solubelle is dissolving toward"
+            fill
+            sizes="100vw"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+        <div className="container-max" style={{ maxWidth: 760, padding: '4rem 1.5rem' }}>
+          <FadeInSection>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', color: '#0f172a', marginBottom: '1.5rem' }}>
+              The Solubelle Vision
+            </h2>
+            <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.85, marginBottom: '1.25rem' }}>
+              Today, we live with a quiet kind of permanence. A bag is used for eleven minutes and then exists for a thousand years. It outlives the person who carried it, their children, their grandchildren. It breaks into pieces too small to see and ends up in the water we drink, the fish we eat, the rain that falls. We&apos;ve made disappearance impossible. Everything we touch, we keep — whether we want to or not.
+            </p>
+            <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.85, marginBottom: '1.25rem' }}>
+              As a doctor, I spent my life removing harm from the human body. But there&apos;s a harm we&apos;ve all agreed to ignore: the harm that doesn&apos;t bleed, doesn&apos;t show up on a scan, just accumulates — silently, everywhere, forever.
+            </p>
+            <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.15rem', color: '#1A7DC4', margin: '2rem 0 1rem' }}>
+              Imagine the other world.
+            </p>
+            <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.85, marginBottom: '1.25rem' }}>
+              Imagine a checkout line where the bag in your hand was never a problem to begin with. You carry your groceries home, and when you&apos;re done, you hold the bag under warm water and watch it vanish — not into a landfill, not into the sea, but into nothing at all. Water, a breath of CO₂, and a little biomass that the earth simply takes back.
+            </p>
+            <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.85, marginBottom: '1.25rem' }}>
+              Imagine a child who grows up never learning the phrase &quot;this&apos;ll be here forever.&quot; Imagine an ocean where the only thing that dissolves is the thing we meant to dissolve. Imagine a coastline where a turtle&apos;s water is just water. Imagine a country that, having watched the rest of the world act, finally caught up — and then led.
+            </p>
+            <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.85, marginBottom: '1.25rem' }}>
+              That&apos;s the world Solubelle is dissolving toward. A world where convenience doesn&apos;t cost a thousand years. Where the things we use for minutes are gone in minutes. Where clean water and clean earth aren&apos;t a sacrifice we make, but the default we never had to think about.
+            </p>
+            <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.85 }}>
+              I&apos;ve spent my whole life helping things heal. Now I want to help the planet do what it does best — when we finally let it: disappear what we no longer need, and begin again, clean.
+            </p>
           </FadeInSection>
         </div>
       </section>
