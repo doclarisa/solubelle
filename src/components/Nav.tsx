@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 const links = [
@@ -14,15 +14,7 @@ const links = [
 ];
 
 export default function Nav() {
-  const [open,   setOpen]   = useState(false);
-  const [mobile, setMobile] = useState(false);
-
-  useEffect(() => {
-    const check = () => setMobile(window.innerWidth < 900);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
+  const [open, setOpen] = useState(false);
 
   return (
     <header style={{
@@ -34,17 +26,29 @@ export default function Nav() {
       backdropFilter: 'blur(8px)',
       WebkitBackdropFilter: 'blur(8px)',
     }}>
-      <div style={{
+      {/* Responsive switching — inline styles can't hold media queries, so this
+          scoped style block drives desktop/mobile visibility via CSS (works on
+          first server render, no hydration mismatch, no flash). */}
+      <style>{`
+        .nav-desktop { display: none; }
+        .nav-burger  { display: flex; }
+        .nav-bar     { height: 58px; padding: 0 20px; }
+        @media (min-width: 900px) {
+          .nav-desktop { display: flex; }
+          .nav-burger  { display: none; }
+          .nav-bar     { height: 64px; padding: 0 52px; }
+        }
+      `}</style>
+
+      <div className="nav-bar" style={{
         maxWidth: 1240,
         margin: '0 auto',
-        padding: '0 52px',
-        height: 170,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
 
-        {/* Logo */}
+        {/* Logo — fixed 48px tall, independent of header height (never shrinks) */}
         <a href="/" aria-label="Solubelle Home" style={{ display: 'inline-block', lineHeight: 0, flexShrink: 0 }}>
           <Image
             src="/SolubelleLOGO.png"
@@ -52,75 +56,73 @@ export default function Nav() {
             width={500}
             height={150}
             priority
-            style={{ objectFit: 'contain', height: '150px', width: 'auto', display: 'block' }}
+            style={{ objectFit: 'contain', height: '48px', width: 'auto', display: 'block' }}
           />
         </a>
 
         {/* Desktop nav */}
-        {!mobile && (
-          <nav aria-label="Main navigation" style={{ display: 'flex', alignItems: 'center', gap: '1.75rem' }}>
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  fontWeight: 500,
-                  fontSize: 15,
-                  color: '#3D4748',
-                  textDecoration: 'none',
-                  transition: 'color 0.15s',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#3D8C41')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#3D4748')}
-              >
-                {l.label}
-              </a>
-            ))}
+        <nav className="nav-desktop" aria-label="Main navigation" style={{ alignItems: 'center', gap: '1.75rem' }}>
+          {links.map((l) => (
             <a
-              href="#contact"
+              key={l.href}
+              href={l.href}
               style={{
-                background: '#5DAE61',
-                color: '#fff',
-                padding: '10px 22px',
-                borderRadius: 999,
-                fontSize: 14,
-                fontWeight: 700,
-                textDecoration: 'none',
                 fontFamily: "'Manrope', sans-serif",
-                flexShrink: 0,
-                transition: 'background 0.15s',
-                marginLeft: 8,
+                fontWeight: 500,
+                fontSize: 15,
+                color: '#3D4748',
+                textDecoration: 'none',
+                transition: 'color 0.15s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = '#3D8C41')}
-              onMouseLeave={(e) => (e.currentTarget.style.background = '#5DAE61')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#3D8C41')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#3D4748')}
             >
-              Request samples →
+              {l.label}
             </a>
-          </nav>
-        )}
+          ))}
+          <a
+            href="#contact"
+            style={{
+              background: '#5DAE61',
+              color: '#fff',
+              padding: '10px 22px',
+              borderRadius: 999,
+              fontSize: 14,
+              fontWeight: 700,
+              textDecoration: 'none',
+              fontFamily: "'Manrope', sans-serif",
+              flexShrink: 0,
+              transition: 'background 0.15s',
+              marginLeft: 8,
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#3D8C41')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#5DAE61')}
+          >
+            Request samples →
+          </a>
+        </nav>
 
         {/* Mobile hamburger */}
-        {mobile && (
-          <button
-            aria-label="Toggle navigation"
-            aria-expanded={open}
-            onClick={() => setOpen(!open)}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', display: 'flex', flexDirection: 'column', gap: 5 }}
-          >
-            <span style={{ display: 'block', width: 22, height: 2, background: '#2F3A3B', transition: 'transform 0.2s', transform: open ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
-            <span style={{ display: 'block', width: 22, height: 2, background: '#2F3A3B', opacity: open ? 0 : 1, transition: 'opacity 0.2s' }} />
-            <span style={{ display: 'block', width: 22, height: 2, background: '#2F3A3B', transition: 'transform 0.2s', transform: open ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
-          </button>
-        )}
+        <button
+          className="nav-burger"
+          aria-label="Toggle navigation"
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', flexDirection: 'column', gap: 5 }}
+        >
+          <span style={{ display: 'block', width: 22, height: 2, background: '#2F3A3B', transition: 'transform 0.2s', transform: open ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+          <span style={{ display: 'block', width: 22, height: 2, background: '#2F3A3B', opacity: open ? 0 : 1, transition: 'opacity 0.2s' }} />
+          <span style={{ display: 'block', width: 22, height: 2, background: '#2F3A3B', transition: 'transform 0.2s', transform: open ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
+        </button>
       </div>
 
-      {/* Mobile dropdown */}
-      {mobile && open && (
-        <div style={{
+      {/* Mobile dropdown — only renders when open; hidden ≥900px via .nav-burger wrapper logic */}
+      {open && (
+        <div className="nav-burger" style={{
+          flexDirection: 'column',
           background: 'rgba(254,252,247,.99)',
           borderTop: '1px solid #d0ece0',
-          padding: '1rem 24px 1.5rem',
+          padding: '1rem 20px 1.5rem',
         }}>
           {links.map((l) => (
             <a
