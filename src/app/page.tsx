@@ -41,34 +41,24 @@ export default function HomePage() {
     <div style={{ fontFamily: "'Manrope', system-ui, sans-serif", background: OFF, color: INK }}>
 
       {/* ── 1. HERO ──────────────────────────────────────────── */}
-      <section className="hero-grid">
+      <section className="flex flex-col lg:grid lg:grid-cols-2 lg:min-h-[620px]">
 
         {/* Left — text, aligned to the 1240px content boundary */}
-        <div className="hero-text">
+        <div className="order-2 lg:order-1 flex flex-col justify-center box-border px-5 py-10 md:px-8 md:py-12 lg:py-14 lg:pr-12 lg:pl-[max(52px,calc((100vw_-_1240px)/2_+_52px))]">
             {/* Pill badge */}
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: 7,
+            <span className="inline-flex items-center gap-[7px] w-fit max-w-full whitespace-normal mb-5" style={{
               alignSelf: 'flex-start',
-              width: 'fit-content',
               background: 'rgba(93,174,97,.15)', border: '1.5px solid rgba(93,174,97,.3)',
               borderRadius: 999, padding: '6px 16px',
               fontSize: 13, fontWeight: 700, color: LEAFD, letterSpacing: '.02em',
-              marginBottom: 20, whiteSpace: 'nowrap',
             }}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
                 <path d="M7 1C7 1 2 5.5 2 8.5a5 5 0 0010 0C12 5.5 7 1 7 1z" fill={LEAF} fillOpacity=".25" stroke={LEAFD} strokeWidth="1.2"/>
               </svg>
               {SPECS.fda} · PVA water-soluble · Ships from the US
             </span>
 
-            <h1 style={{
-              fontSize: 'clamp(2.8rem, 5.5vw, 4.2rem)',
-              fontWeight: 800,
-              lineHeight: 1.05,
-              color: INK,
-              marginBottom: 28,
-              letterSpacing: '-0.02em',
-            }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] lg:leading-[1.05] tracking-tight mb-6 lg:mb-7" style={{ color: INK, letterSpacing: '-0.02em' }}>
               Drop it in water.<br />
               <span style={{ color: OCEAND }}>Watch it disappear.</span>
             </h1>
@@ -103,9 +93,9 @@ export default function HomePage() {
             </div>
           </div>
 
-        {/* Right — hero photo, full bleed to the viewport edge */}
-        <div className="hero-photo">
-          <div style={{ position: 'absolute', inset: 0, animation: 'float 8s ease-in-out infinite' }}>
+        {/* Right — hero photo: stacked block on phone, full bleed to the viewport edge on desktop */}
+        <div className="hero-photo order-1 lg:order-2 relative w-full h-[280px] lg:h-auto lg:min-h-[480px] overflow-hidden">
+          <div className="absolute inset-0" style={{ animation: 'float 8s ease-in-out infinite' }}>
             {['/heroimg1.png', '/heroimg2.png', '/heroimg3.png', '/heroimg4.png'].map((src, i) => (
               <div className="hero-frame" key={src}>
                 <Image
@@ -114,14 +104,14 @@ export default function HomePage() {
                   fill
                   priority={i === 0}
                   quality={88}
-                  sizes="(max-width: 900px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   style={{ objectFit: 'cover', objectPosition: 'var(--hero-photo-pos, center)', transform: 'scale(1.08)' }}
                 />
               </div>
             ))}
           </div>
-          {/* Soft scrim to blend the seam between photo and text column */}
-          <div aria-hidden="true" className="hero-seam" />
+          {/* Soft scrim to blend the seam between photo and text column — desktop only */}
+          <div aria-hidden="true" className="hero-seam hidden lg:block" />
         </div>
       </section>
 
