@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import FadeInSection from '@/components/FadeInSection';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -49,14 +50,65 @@ export default function HowItWorksPage() {
               </blockquote>
             </FadeInSection>
             <FadeInSection delay={100}>
-              <div style={{ background: 'linear-gradient(135deg, #e8f4fd, #e8f5e9)', borderRadius: 16, padding: '3rem', textAlign: 'center' }}>
-                <div role="img" aria-label="Molecular structure diagram placeholder showing PVA polymer chain dissolving in water" style={{ width: '100%', height: 240, background: 'rgba(26,125,196,0.08)', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-                  <span style={{ fontFamily: "'Poppins',sans-serif", color: '#1A7DC4', fontWeight: 600, fontSize: '0.9rem' }}>PVA Molecular Diagram</span>
+              <div style={{ background: 'linear-gradient(135deg, #e8f4fd, #e8f5e9)', borderRadius: 16, padding: '2rem', textAlign: 'center' }}>
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '5376 / 2816', borderRadius: 12, overflow: 'hidden', marginBottom: '1rem' }}>
+                  <Image
+                    src="/PVAvsPoly.png"
+                    alt="Structural comparison diagram of polyvinyl alcohol (PVA) and polyethylene (PE) molecular chains, showing the OH groups present on PVA and absent on PE"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    style={{ objectFit: 'contain' }}
+                  />
                 </div>
                 <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '0.9rem', color: '#6b7280' }}>Polyvinyl alcohol vs. polyethylene — a structural comparison</p>
               </div>
             </FadeInSection>
           </div>
+
+          {/* PVA vs PE — what the diagram means */}
+          <FadeInSection delay={150}>
+            <div style={{ maxWidth: 760, margin: '4rem auto 0' }}>
+              <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.25rem,2.5vw,1.6rem)', color: '#1a1a1a', marginBottom: '1.25rem' }}>
+                The One Big Thing That&apos;s Different
+              </h3>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.05rem', color: '#374151', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                PVA has little OH groups (an oxygen and hydrogen holding hands) hanging off the chain like charms on a bracelet. Polyethylene has nothing hanging off — it&apos;s just a plain chain of carbons.
+              </p>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.05rem', color: '#374151', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                Those little OH charms are everything. PVA holds out its hands everywhere (those OH groups). So water runs up and hugs it from all sides, pulls it apart, and it dissolves — just like sugar does!
+              </p>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.05rem', color: '#374151', lineHeight: 1.75, marginBottom: '2.5rem' }}>
+                Polyethylene keeps its arms crossed. Water comes by, tries to hug it&hellip; nothing. No hands to grab. So water just slides right off, forever. That&apos;s why a plastic bag can sit in the ocean for 500 years and barely change.
+              </p>
+
+              <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.25rem,2.5vw,1.6rem)', color: '#1a1a1a', marginBottom: '1.25rem' }}>
+                Why Does PVA Disappear in Nature?
+              </h3>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.05rem', color: '#374151', lineHeight: 1.75, marginBottom: '1.5rem' }}>
+                Two things happen when PVA meets the world:
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px,1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                <div className="card">
+                  <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '0.95rem', color: '#1A7DC4', marginBottom: '0.6rem' }}>Step 1 — Water grabs it</p>
+                  <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '0.95rem', color: '#4b5563', lineHeight: 1.75 }}>
+                    Those OH groups attract water molecules, which wedge themselves between the PVA chains and pull them apart. The bag gets weaker and weaker until it&apos;s just liquid.
+                  </p>
+                </div>
+                <div className="card">
+                  <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '0.95rem', color: '#4CAF50', marginBottom: '0.6rem' }}>Step 2 — Microbes eat it</p>
+                  <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '0.95rem', color: '#4b5563', lineHeight: 1.75 }}>
+                    Tiny bacteria and fungi in soil and water love to snack on PVA. They have enzymes (little chemical scissors) that chop it up into carbon dioxide, water, and harmless bits — the same stuff plants breathe in.
+                  </p>
+                </div>
+              </div>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.05rem', color: '#374151', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                Polyethylene? Microbes take one sniff and walk away. Nothing to grab onto, nothing to eat.
+              </p>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.05rem', color: '#374151', lineHeight: 1.75 }}>
+                The whole magic of Solubelle&apos;s product lives in those tiny little OH groups. One small chemical difference — and a bag goes from lasting longer than your great-great-grandchildren to disappearing before your next grocery run. 🌿
+              </p>
+            </div>
+          </FadeInSection>
         </div>
       </section>
 
