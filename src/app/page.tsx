@@ -667,7 +667,7 @@ export default function HomePage() {
 
           <FadeInSection delay={150}>
             <div style={{ textAlign: 'center', marginTop: 36 }}>
-              <Link href="/faq" style={{ color: OCEAND, fontSize: 15, fontWeight: 700, textDecoration: 'none' }}>
+              <Link href="/how-it-works#faq" style={{ color: OCEAND, fontSize: 15, fontWeight: 700, textDecoration: 'none' }}>
                 View all FAQs →
               </Link>
             </div>

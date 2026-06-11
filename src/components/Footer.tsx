@@ -59,7 +59,7 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h4 style={{ fontSize: 11, fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '.12em', marginBottom: '1rem' }}>Company</h4>
-            {[['How It Works', '/how-it-works'], ['Our Story', '/about'], ['For Retailers', '/for-retailers'], ['FAQ', '/faq'], ['Contact', '/contact'], ['Privacy Policy', '/privacy-policy']].map(([label, href]) => (
+            {[['How It Works', '/how-it-works'], ['Our Story', '/about'], ['For Retailers', '/for-retailers'], ['FAQ', '/how-it-works#faq'], ['Contact', '/contact'], ['Privacy Policy', '/privacy-policy']].map(([label, href]) => (
               <a key={href} href={href} style={{ display: 'block', marginBottom: '0.6rem', fontSize: '0.875rem', color: 'rgba(255,255,255,.5)', textDecoration: 'none', transition: 'color 0.2s' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.5)')}>{label}</a>

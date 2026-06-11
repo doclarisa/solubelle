@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/products', priority: 0.9, changeFrequency: 'weekly' as const },
     { path: '/why-solubelle', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/for-retailers', priority: 0.9, changeFrequency: 'monthly' as const },
-    { path: '/faq', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/blog', priority: 0.85, changeFrequency: 'weekly' as const },
     { path: '/dissolvable-grocery-bags-guide', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/blog/pva-biodegradability-controversy-explained', priority: 0.8, changeFrequency: 'monthly' as const },

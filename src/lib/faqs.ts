@@ -1,10 +1,6 @@
-'use client';
-
-import { useState } from 'react';
-import Link from 'next/link';
 import { SPECS } from '@/lib/specs';
 
-const faqs = [
+export const faqs = [
   {
     q: 'Are PVA bags safe for food contact?',
     a: 'Yes. PVA is an FDA-recognized safe material used in food packaging, eye drops, and laundry pods. Our bags contain no BPA, phthalates, or heavy metals.',
@@ -33,7 +29,7 @@ const faqs = [
   {
     q: 'What about the ASU wastewater study?',
     a: "The 2021 ASU/Rolsky study found that PVA does not fully biodegrade in all wastewater treatment plants. This is a real finding we take seriously. We're working with enhanced-biodegradability suppliers and monitoring research closely. Full transparency: this science is evolving. We'll update our guidance as peer-reviewed literature develops.",
-    link: { href: '/how-it-works', label: 'Read our full wastewater explainer →' },
+    link: { href: '/how-it-works#wastewater', label: 'Read our full wastewater explainer →' },
   },
   {
     q: 'Can I use them for hot food?',
@@ -59,61 +55,12 @@ const faqs = [
   },
 ];
 
-type FAQ = typeof faqs[0];
-
-function AccordionItem({ faq, isOpen, onToggle }: { faq: FAQ; isOpen: boolean; onToggle: () => void }) {
-  return (
-    <div style={{ borderBottom: '1px solid #e5e7eb' }}>
-      <button
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        style={{
-          width: '100%',
-          background: 'none',
-          border: 'none',
-          padding: '1.5rem 0',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          cursor: 'pointer',
-          textAlign: 'left',
-          gap: '1rem',
-        }}
-      >
-        <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '1rem', color: isOpen ? '#1A7DC4' : '#1a1a1a', lineHeight: 1.5 }}>
-          {faq.q}
-        </span>
-        <span style={{ color: isOpen ? '#1A7DC4' : '#9ca3af', fontSize: '1.5rem', flexShrink: 0, transition: 'transform 0.25s', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)', display: 'inline-block', lineHeight: 1 }}>
-          +
-        </span>
-      </button>
-      <div className={`accordion-content${isOpen ? ' open' : ''}`} aria-hidden={!isOpen}>
-        <div style={{ paddingBottom: '1.5rem' }}>
-          <p style={{ color: '#374151', lineHeight: 1.8, margin: 0, marginBottom: faq.link ? '1rem' : 0 }}>{faq.a}</p>
-          {faq.link && (
-            <Link href={faq.link.href} style={{ color: '#1A7DC4', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}>
-              {faq.link.label}
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default function FAQClient() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  return (
-    <>
-      {faqs.map((faq, i) => (
-        <AccordionItem
-          key={i}
-          faq={faq}
-          isOpen={openIndex === i}
-          onToggle={() => setOpenIndex(openIndex === i ? null : i)}
-        />
-      ))}
-    </>
-  );
-}
+export const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+};

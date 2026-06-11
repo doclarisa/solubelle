@@ -32,10 +32,12 @@ export default function Nav() {
         .nav-desktop { display: none; }
         .nav-burger  { display: flex; }
         .nav-bar     { height: 58px; padding: 0 20px; }
+        .nav-logo    { height: 19px; width: auto; }
         @media (min-width: 900px) {
           .nav-desktop { display: flex; }
           .nav-burger  { display: none; }
           .nav-bar     { height: 64px; padding: 0 52px; }
+          .nav-logo    { height: 21px; }
         }
       `}</style>
 
@@ -47,15 +49,17 @@ export default function Nav() {
         justifyContent: 'space-between',
       }}>
 
-        {/* Logo — fixed 48px tall, independent of header height (never shrinks) */}
+        {/* Logo mark — cropped to remove transparent padding so it reads larger
+            within the same header height (~1/3 of the bar height) */}
         <a href="/" aria-label="Solubelle Home" style={{ display: 'inline-block', lineHeight: 0, flexShrink: 0 }}>
           <Image
-            src="/SolubelleLOGO.png"
+            src="/SolubelleLOGO-mark.png"
             alt="Solubelle — water-soluble grocery bags"
-            width={500}
-            height={150}
+            width={1115}
+            height={354}
             priority
-            style={{ objectFit: 'contain', height: '48px', width: 'auto', display: 'block' }}
+            className="nav-logo"
+            style={{ objectFit: 'contain', display: 'block' }}
           />
         </a>
 

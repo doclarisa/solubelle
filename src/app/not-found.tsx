@@ -42,7 +42,7 @@ export default function NotFound() {
               { href: '/how-it-works', label: 'How It Works' },
               { href: '/why-solubelle', label: 'Why Solubelle' },
               { href: '/for-retailers', label: 'For Retailers' },
-              { href: '/faq', label: 'FAQ' },
+              { href: '/how-it-works#faq', label: 'FAQ' },
               { href: '/contact', label: 'Contact' },
             ].map((link) => (
               <Link

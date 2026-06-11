@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
         destination: 'https://solubelle.com/:path*',
         permanent: true,
       },
+      // FAQ content merged into How It Works
+      {
+        source: '/faq',
+        destination: '/how-it-works#faq',
+        permanent: true,
+      },
     ];
   },
   // Security headers

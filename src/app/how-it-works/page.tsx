@@ -1,16 +1,20 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import FadeInSection from '@/components/FadeInSection';
+import FAQAccordion from '@/components/FAQAccordion';
+import { faqSchema } from '@/lib/faqs';
 import { SPECS } from '@/lib/specs';
 
 export const metadata: Metadata = {
   title: 'How PVA Water-Soluble Bags Work | Solubelle®',
-  description: 'Learn how PVA water-soluble bags dissolve safely in water, how they differ from compostable bags, and why they leave zero microplastics.',
+  description: 'Learn how PVA water-soluble bags dissolve safely in water, how they differ from compostable bags, and why they leave zero microplastics. Plus answers to common safety, dissolution, and ordering questions.',
   alternates: { canonical: 'https://solubelle.com/how-it-works' },
 };
 
 export default function HowItWorksPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     <main>
       {/* Hero */}
       <section style={{ background: 'linear-gradient(135deg, #e8f4fd 0%, #e8f5e9 100%)', padding: '5rem 0 4rem' }}>
@@ -138,7 +142,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Section 4: Wastewater */}
-      <section style={{ padding: '5rem 0' }}>
+      <section id="wastewater" style={{ padding: '5rem 0' }}>
         <div className="container-max">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: '4rem', alignItems: 'start' }}>
             <FadeInSection>
@@ -197,22 +201,43 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* FAQ Teaser */}
+      {/* FAQ */}
+      <section id="faq" style={{ padding: '5rem 0' }}>
+        <div className="container-max">
+          <FadeInSection>
+            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+              <p style={{ color: '#1A7DC4', fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Common Questions</p>
+              <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.5rem,3vw,2.25rem)', color: '#1a1a1a' }}>Frequently Asked Questions</h2>
+              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.05rem', color: '#4b5563', maxWidth: 600, margin: '0.75rem auto 0' }}>
+                Safety, dissolution, microplastics, ordering, and more — answered honestly.
+              </p>
+            </div>
+          </FadeInSection>
+          <FadeInSection delay={100}>
+            <div style={{ maxWidth: 760, margin: '0 auto' }}>
+              <FAQAccordion />
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* CTA Strip */}
       <section style={{ background: 'linear-gradient(135deg, #1A7DC4, #4CAF50)', padding: '4rem 0' }}>
         <div className="container-max" style={{ textAlign: 'center' }}>
           <FadeInSection>
             <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.4rem,3vw,2rem)', color: '#fff', marginBottom: '1rem' }}>
-              Still Have Questions?
+              Still Have a Question?
             </h2>
             <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '1.1rem', color: 'rgba(255,255,255,0.9)', marginBottom: '2rem', maxWidth: 560, margin: '0 auto 2rem' }}>
-              We&apos;ve answered 12 of the most common questions about PVA bag safety, dissolution, and ordering on our FAQ page.
+              We reply to every message within 1 business day.
             </p>
-            <Link href="/faq" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.85rem 2.25rem', background: '#fff', color: '#1A7DC4', fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1rem', borderRadius: 6, textDecoration: 'none', transition: 'transform 0.15s' }}>
-              Read the FAQ →
+            <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.85rem 2.25rem', background: '#fff', color: '#1A7DC4', fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1rem', borderRadius: 6, textDecoration: 'none', transition: 'transform 0.15s' }}>
+              Contact Us →
             </Link>
           </FadeInSection>
         </div>
       </section>
     </main>
+    </>
   );
 }
