@@ -13,7 +13,7 @@ const tableRows = [
   { feature: 'Microplastics risk', pva: '✅ None', plastic: '❌ High', paper: '✅ None', pla: '⚠️ Fragments if mishandled', cloth: '✅ None' },
   { feature: 'Requires industrial composting', pva: '✅ No', plastic: '✅ No', paper: '✅ No', pla: '❌ Yes', cloth: '✅ No' },
   { feature: 'Available at retail checkout', pva: '✅', plastic: '✅', paper: '✅', pla: '⚠️ Limited', cloth: '❌' },
-  { feature: 'Food-safe certified', pva: '✅ FDA GRAS', plastic: '⚠️ Varies', paper: '✅', pla: '✅', cloth: '⚠️ Varies' },
+  { feature: 'Food-safe certified', pva: '✅ Food-grade safe', plastic: '⚠️ Varies', paper: '✅', pla: '✅', cloth: '⚠️ Varies' },
   { feature: 'Rain resistant', pva: '✅', plastic: '✅', paper: '❌', pla: '✅', cloth: '⚠️ Limited' },
   { feature: 'Carbon footprint (relative)', pva: '🟢 Low', plastic: '🟡 Medium', paper: '🔴 High (7×)', pla: '🟡 Medium', cloth: '🔴 Very high initially' },
   { feature: 'Works in existing bag dispensers', pva: '✅', plastic: '✅', paper: '❌', pla: '⚠️ Sometimes', cloth: '❌' },

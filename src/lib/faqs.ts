@@ -3,7 +3,7 @@ import { SPECS } from '@/lib/specs';
 export const faqs = [
   {
     q: 'Are PVA bags safe for food contact?',
-    a: 'Yes. PVA is an FDA-recognized safe material used in food packaging, eye drops, and laundry pods. Our bags contain no BPA, phthalates, or heavy metals.',
+    a: 'Yes. PVA is widely used in food packaging, eye drops, and laundry pods. Our bags contain no BPA, phthalates, or heavy metals. Certification documentation is available upon request.',
   },
   {
     q: 'Will rain dissolve my bag before I get to the store?',
@@ -23,7 +23,7 @@ export const faqs = [
   },
   {
     q: 'Are they certified?',
-    a: 'Yes. Our bags meet ASTM D6400 standards for biodegradable materials. Raw materials are FDA-recognized safe. See our Certifications page for full documentation.',
+    a: 'Yes. Our bags carry third-party certifications including SGS laboratory testing and EN13432. Certification documentation is available upon request.',
     link: { href: '/certifications', label: 'View Certifications →' },
   },
   {
@@ -52,6 +52,22 @@ export const faqs = [
   {
     q: "What's the shelf life?",
     a: 'Store in a cool, dry place away from humidity. Shelf life is 24 months in original, sealed packaging.',
+  },
+  {
+    q: "Aren't paper bags better for the environment than plastic?",
+    a: "Paper is better than conventional plastic on decomposition, but it comes with real environmental costs people often overlook. Paper bags require roughly 4× more energy and significantly more water to manufacture than plastic bags. Their carbon footprint per bag is actually higher than plastic at the point of production. And in a sealed landfill — which is where most bags end up — paper can sit for years without breaking down due to lack of oxygen and moisture. Paper is a step in the right direction, but it's not a clean solution.",
+  },
+  {
+    q: 'How does a PVA bag break down compared to paper?',
+    a: 'Paper decomposes through microbial action, which requires the right combination of oxygen, moisture, and active microorganisms — conditions that aren\'t guaranteed in most disposal environments. PVA bags dissolve directly in water and break down into water, CO₂, and biomass. No facility required. No special bin. No waiting months for decomposition to begin.',
+  },
+  {
+    q: 'Can PVA bags handle the same loads as paper bags?',
+    a: 'Yes — and they handle wet conditions better. Paper bags lose structural integrity when exposed to moisture; handles tear, bottoms give out. PVA bags are formulated to resist ambient moisture and light rain while still dissolving when fully submerged in water, making them more practical for everyday grocery use.',
+  },
+  {
+    q: "Can't customers just recycle paper bags?",
+    a: "Technically yes, but only if the bag is clean, dry, and deposited in the correct stream — and only if the local recycling facility accepts them. In practice, recycling rates for paper bags are far lower than most people assume. PVA eliminates the recycling question: dissolve it at home under hot water and the disposal problem is solved, with nothing harmful left behind.",
   },
 ];
 

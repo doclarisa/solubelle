@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: 'Are dissolvable grocery bags safe for food contact?',
-    a: 'Yes. PVA used in Solubelle bags is FDA food-contact compliant under 21 CFR 175.300. The same material is used in food packaging coatings, eye drops, and laundry detergent pods.',
+    a: 'Yes. PVA is widely used in food packaging coatings, eye drops, and laundry detergent pods. Solubelle bags are food-grade safe. Certification is available upon request.',
   },
   {
     q: 'Will my dissolvable bag fall apart in the rain or with wet groceries?',
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: 'Are dissolvable bags legal where plastic bags are banned?',
-    a: 'Yes, in all 50 states. Because PVA is not polyethylene or polypropylene, dissolvable bags fall outside most "single-use plastic bag" definitions, and they meet ASTM D6400 — the biodegradable-materials standard most bag-ban legislation references.',
+    a: 'Yes, in all 50 states. Because PVA is not polyethylene or polypropylene, dissolvable bags fall outside most "single-use plastic bag" definitions. They are independently tested and EN13432 certified.',
   },
   {
     q: 'How is "zero microplastics" verified for dissolvable bags?',
@@ -187,7 +187,7 @@ export default function DissolvableGroceryBagsGuidePage() {
                   <td>&quot;Biodegradable&quot; plastic</td>
                   <td>Often unverified — many never fully break down</td>
                   <td>Frequently fragments into microplastics</td>
-                  <td>Avoid unless certified (ASTM D6400)</td>
+                  <td>Avoid unless independently certified</td>
                 </tr>
                 <tr>
                   <td>Reusable (cotton/RPET)</td>
@@ -206,8 +206,8 @@ export default function DissolvableGroceryBagsGuidePage() {
               Yes — and the safety case rests on three independent pillars rather than a single marketing claim:
             </p>
             <ul>
-              <li><strong>Food contact:</strong> PVA used in Solubelle bags is {SPECS.fda}, the same regulatory status that covers food packaging coatings, eye drops, and laundry pods.</li>
-              <li><strong>Material standard:</strong> Solubelle bags meet ASTM D6400, the US standard for biodegradable plastics, and California&apos;s SB 270 / SB 1053 carryout bag requirements.</li>
+              <li><strong>Food contact:</strong> PVA is widely used in food packaging coatings, eye drops, and laundry pods. Solubelle bags are food-grade safe — certification is available upon request.</li>
+              <li><strong>Material standard:</strong> Solubelle bags are EN13432 certified and meet California&apos;s SB 270 / SB 1053 carryout bag requirements.</li>
               <li><strong>Zero microplastics, independently verified:</strong> Post-dissolution water is tested with FTIR (Fourier-transform infrared spectroscopy), which detects polymer particles down to trace levels. PVA dissolution leaves none.</li>
             </ul>
             <p>
@@ -222,7 +222,7 @@ export default function DissolvableGroceryBagsGuidePage() {
               As of 2026, more than a dozen US states — including California, New York, New Jersey, Illinois, Oregon, Washington, and others — have enacted bans or fees on single-use plastic checkout bags, with many more cities and counties going further on their own.
             </p>
             <p>
-              Dissolvable PVA bags are compliant in all 50 states for two reasons: they are not polyethylene or polypropylene, so they fall outside the scope of &quot;single-use plastic bag&quot; as most legislation defines it, and they carry ASTM D6400 certification — the standard most bag-ban laws point to for approved biodegradable alternatives. For a state-by-state breakdown, see <Link className="inline-link" href="/blog/plastic-bag-bans-what-retailers-need-to-know">Plastic Bag Bans in 2026: What US Retailers Need to Know</Link>.
+              Dissolvable PVA bags are compliant in all 50 states: they are not polyethylene or polypropylene, so they fall outside the scope of &quot;single-use plastic bag&quot; as most legislation defines it. They are also EN13432 certified and independently tested. For a state-by-state breakdown, see <Link className="inline-link" href="/blog/plastic-bag-bans-what-retailers-need-to-know">Plastic Bag Bans in 2026: What US Retailers Need to Know</Link>.
             </p>
 
             <h2 id="who-uses">Who Uses Dissolvable Grocery Bags?</h2>

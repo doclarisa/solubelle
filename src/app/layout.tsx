@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "name": "Solubelle",
                 "url": "https://solubelle.com",
                 "logo": "https://solubelle.com/SolubelleLOGO.png",
-                "description": "US distributor of PVA water-soluble grocery bags. Zero microplastics. ASTM D6400 certified. Wholesale and retail.",
+                "description": "US distributor of PVA water-soluble grocery bags. Zero microplastics. EN13432 certified. SGS third-party tested. Wholesale and retail.",
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Oak Park",

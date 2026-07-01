@@ -5,7 +5,7 @@ import { SPECS } from '@/lib/specs';
 
 export const metadata: Metadata = {
   title: 'Certifications | Solubelle® PVA Bag Safety & Standards',
-  description: "View Solubelle's certifications for PVA water-soluble bags including ASTM D6400, FDA material safety, and third-party testing documentation.",
+  description: "View Solubelle's certifications for PVA water-soluble bags including EN13432, SGS third-party testing, and ISO 9001 quality documentation.",
   alternates: { canonical: 'https://solubelle.com/certifications' },
 };
 
@@ -14,17 +14,17 @@ const certs = [
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
     ),
-    name: 'ASTM D6400',
-    subtitle: 'Standard for Biodegradable Plastics',
-    desc: 'The gold standard for biodegradable materials in the United States. ASTM D6400 specifies requirements for labeling plastics designed to be composted in municipal and industrial facilities. Our bags meet this specification.',
+    name: 'EN13432',
+    subtitle: 'European Standard for Biodegradable Packaging',
+    desc: 'International standard specifying requirements for packaging recoverable through composting and biodegradation. EN13432 is recognized by regulators across Europe and the United States as a benchmark for biodegradable materials.',
   },
   {
     icon: (
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.45l-2.928 2.928m2.928-2.928l3.103 3.103m-3.103-3.103l-3.103-3.103" />
     ),
-    name: 'FDA GRAS',
-    subtitle: 'Generally Recognized as Safe',
-    desc: 'PVA (polyvinyl alcohol) is recognized by the FDA as generally recognized as safe (GRAS) for use in food-contact applications. This designation covers use in food packaging, coatings, and incidental food contact.',
+    name: 'Certification Available Upon Request',
+    subtitle: 'Documentation Provided to Partners',
+    desc: 'Full certification packets — including safety documentation, material safety data, and lab reports — are available to retailers, partners, and auditors upon request. Contact us to receive documentation.',
   },
   {
     icon: (

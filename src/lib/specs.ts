@@ -29,8 +29,8 @@ export const SPECS = {
     customBranded: '4–6 weeks',
   },
 
-  fda: 'FDA food-contact compliant (21 CFR 175.300)',
-  fdaShort: 'FDA food-contact compliant',
+  fda: 'food-grade safe — certification available upon request',
+  fdaShort: 'Food-grade safe',
 
   caBagLaw: {
     name: 'California SB 270 & SB 1053 Compliance',

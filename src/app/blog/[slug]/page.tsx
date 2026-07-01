@@ -82,7 +82,7 @@ const content: Record<string, React.ReactNode> = {
         This is not an argument for complacency. The Rolsky paper forced an examination of whether PVA&apos;s biodegradability claims were based on lab conditions disconnected from real-world infrastructure. The answer, after expert review, EPA determination, and EU regulatory action: for properly formulated PVA under normal treatment conditions, the claims hold. The controversy elevated the standards of evidence required to make them. For the bag that disappears, that&apos;s probably a healthy outcome. The materials of the future will need to earn their green credentials through rigorous, certified, independent testing — not marketing copy. The debate over PVA has pushed exactly in that direction.
       </p>
       <p>
-        Solubelle® is a US distributor of PVA water-soluble grocery bags certified to ASTM D6400, EN 13432, and {SPECS.fda}. See our <Link href="/certifications" style={{ color: '#1E8CB5', fontWeight: 600 }}>Certifications page</Link> for full citations and lab reports.
+        Solubelle® is a US distributor of PVA water-soluble grocery bags. Certified to EN13432. Certification documentation is available upon request. See our <Link href="/certifications" style={{ color: '#1E8CB5', fontWeight: 600 }}>Certifications page</Link> for details.
       </p>
     </>
   ),
@@ -112,7 +112,7 @@ const content: Record<string, React.ReactNode> = {
             ['Accessible to Americans', '✗ ~9%', '✓ 100%'],
             ['Microplastics', '✓ None', '✓ None'],
             ['Rain resistant', '✓ Yes', '✓ Yes'],
-            ['Food-safe certified', '✓ Yes', '✓ FDA 21 CFR 175.300'],
+            ['Food-safe certified', '✓ Yes', '✓ Certification available on request'],
           ].map(([f, bad, good], i) => (
             <tr key={f} style={{ background: i % 2 === 0 ? '#fff' : '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
               <td style={{ padding: '11px 16px', fontSize: 14, color: '#2F3A3B' }}>{f}</td>
@@ -155,7 +155,7 @@ const content: Record<string, React.ReactNode> = {
         <li>Paper bags (often still allowed with a fee)</li>
         <li>Certified compostable or biodegradable bags</li>
       </ul>
-      <p>PVA water-soluble bags are compliant in all 50 states. Because they are not polyethylene or polypropylene, they fall outside the scope of &quot;plastic bag&quot; as defined in most legislation. They are also ASTM D6400 certified, which is the standard most laws point to for biodegradable alternatives.</p>
+      <p>PVA water-soluble bags are compliant in all 50 states. Because they are not polyethylene or polypropylene, they fall outside the scope of &quot;plastic bag&quot; as defined in most legislation.</p>
       <h2>What Should Retailers Do Now?</h2>
       <p>Even if your state hasn&apos;t banned plastic bags yet, the trajectory is clear. Getting ahead of the ban — and turning it into a marketing moment — is far better than scrambling to comply. Retailers who switched proactively report that customers <em>notice</em> the dissolving bags. It becomes a conversation starter, a brand differentiator, and a loyalty driver.</p>
       <p>Request a free sample kit to test them at your checkout before committing to wholesale quantities.</p>

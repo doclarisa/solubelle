@@ -61,7 +61,7 @@ export default function HomePage() {
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
                 <path d="M7 1C7 1 2 5.5 2 8.5a5 5 0 0010 0C12 5.5 7 1 7 1z" fill={LEAF} fillOpacity=".25" stroke={LEAFD} strokeWidth="1.2"/>
               </svg>
-              {SPECS.fda} · PVA water-soluble · Ships from the US
+              {SPECS.fdaShort} · PVA water-soluble · Ships from the US
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] lg:leading-[1.05] tracking-tight mb-6 lg:mb-7" style={{ color: INK, letterSpacing: '-0.02em' }}>
@@ -78,9 +78,9 @@ export default function HomePage() {
               {[
                 SPECS.dissolution.hotWaterFull,
                 'Zero microplastics — verified by FTIR analysis',
-                'FDA 21 CFR 175.300 food-safe materials',
+                'Food-grade safe materials — third-party tested',
                 'Rain-resistant until you choose to dissolve it',
-                'ASTM D6400 & EN13432 certified',
+                'EN13432 certified · SGS third-party tested',
               ].map((item) => (
                 <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 16, color: INKM, fontWeight: 500 }}>
                   <Check solid />
@@ -127,7 +127,7 @@ export default function HomePage() {
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         flexWrap: 'wrap',
       }}>
-        {[SPECS.fdaShort, 'ASTM D6400', 'EN13432', 'Zero microplastics', 'Food-grade safe', 'Marine biodegradable'].map((item) => (
+        {['EN13432', 'SGS tested', 'Zero microplastics', 'Food-grade safe', 'Marine biodegradable'].map((item) => (
           <span key={item} style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#fff', whiteSpace: 'nowrap' }}>
             <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'rgba(255,255,255,.7)', display: 'inline-block' }} />
             {item}
@@ -193,7 +193,7 @@ export default function HomePage() {
                   ['Dissolves under your tap', 'Recycling reality'],
                   ['Non-toxic, safe for all life', 'Wildlife impact'],
                   ['Compliant in all 50 states', 'Legislation status'],
-                  ['FDA-compliant, zero residue', 'Final residue'],
+                  ['Safe, zero residue', 'Final residue'],
                 ].map(([val, label]) => (
                   <div key={label} style={{ display: 'flex', gap: 12, marginBottom: 18, paddingBottom: 18, borderBottom: '1px solid rgba(61,140,65,.12)' }}>
                     <span style={{ color: LEAF, fontSize: 16, fontWeight: 700, flexShrink: 0 }}>✓</span>
@@ -224,7 +224,7 @@ export default function HomePage() {
               This is what we&apos;re <span style={{ color: OCEAND }}>protecting</span>.
             </h2>
             <p style={{ fontSize: 18, color: INKM, lineHeight: 1.75, marginBottom: 28 }}>
-              Every Solubelle bag that dissolves is a bag that doesn&apos;t spend centuries in the ocean. Our materials are proven non-toxic in water, soil, and marine environments — certified by ASTM D6400 and EN13432.
+              Every Solubelle bag that dissolves is a bag that doesn&apos;t spend centuries in the ocean. Our materials are proven non-toxic in water, soil, and marine environments — EN13432 certified and SGS third-party tested.
             </p>
             <ul style={{ listStyle: 'none', padding: 0, marginBottom: 32, display: 'flex', flexDirection: 'column', gap: 10 }}>
               {[
@@ -458,10 +458,10 @@ export default function HomePage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, maxWidth: 960, margin: '0 auto' }}>
             {[
-              { cert: 'ASTM D6400', body: 'American Society for Testing and Materials', desc: 'Confirms complete biodisintegration and disintegration in a defined timeframe' },
               { cert: 'EN13432', body: 'European Standard', desc: 'International standard for packaging recoverable through composting and biodegradation' },
-              { cert: 'FDA 21 CFR 175.300', body: 'US Food & Drug Administration', desc: 'Food-contact approved — safe for direct contact with fresh produce and groceries' },
-              { cert: 'Marine Biodegradable', body: 'ASTM D7991 / TÜV Austria', desc: 'Verified non-toxic breakdown in seawater and marine environments' },
+              { cert: 'SGS Third-Party Testing', body: 'Independent Laboratory', desc: 'Heavy metals, phthalates, BPA, and material composition — test reports available on request' },
+              { cert: 'Marine Biodegradable', body: 'TÜV Austria', desc: 'Verified non-toxic breakdown in seawater and marine environments' },
+              { cert: 'Certification Available', body: 'Documentation on Request', desc: 'All lab reports and certification packets are available to retailers and partners on request' },
             ].map((c, i) => (
               <FadeInSection key={c.cert} delay={i * 70}>
                 <div style={{ background: '#fff', border: '1.5px solid #cde9f5', borderRadius: 18, padding: '30px 20px', textAlign: 'center' }}>
@@ -634,7 +634,7 @@ export default function HomePage() {
               },
               {
                 q: 'Is it safe for food and produce contact?',
-                a: 'Yes. Our PVA material meets FDA 21 CFR 175.300 for food-contact use. It\'s used in pharmaceutical capsule coatings and laundry pods for the same reason — proven food-safe and non-toxic.',
+                a: 'Yes. PVA is widely used in pharmaceutical capsule coatings, food packaging, and laundry pods. Our bags are food-grade safe and non-toxic. Certification is available upon request.',
               },
               {
                 q: 'What does it actually break down into?',
@@ -815,7 +815,7 @@ export default function HomePage() {
                 name: 'Are PVA dissolvable bags safe for food contact?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Yes. Our PVA material meets FDA 21 CFR 175.300 for food-contact use. It is non-toxic and safe for direct contact with fresh produce and groceries.',
+                  text: 'Yes. PVA is widely used in pharmaceutical capsule coatings, food packaging, and laundry pods. Our bags are food-grade safe and non-toxic. Certification is available upon request.',
                 },
               },
               {

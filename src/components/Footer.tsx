@@ -69,7 +69,7 @@ export default function Footer() {
           {/* Certifications */}
           <div>
             <h4 style={{ fontSize: 11, fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '.12em', marginBottom: '1rem' }}>Certifications</h4>
-            {['ASTM D6400', 'EN13432', 'FDA 21 CFR 175.300', 'Marine Biodegradable', 'Food-grade safe'].map((cert) => (
+            {['EN13432', 'SGS Tested', 'Marine Biodegradable', 'Food-grade safe', 'Zero microplastics'].map((cert) => (
               <p key={cert} style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: '0.5rem', fontSize: '0.875rem', color: 'rgba(255,255,255,.5)' }}>
                 <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#5DAE61', flexShrink: 0, display: 'inline-block' }} />
                 {cert}

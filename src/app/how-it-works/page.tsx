@@ -172,7 +172,7 @@ export default function HowItWorksPage() {
           </FadeInSection>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px,1fr))', gap: '1.5rem' }}>
             {[
-              { icon: '🍎', title: 'FDA-Recognized Safe', body: 'PVA is recognized as safe by the FDA. It\'s used in approved food packaging applications, eye drops, and as a pharmaceutical excipient.' },
+              { icon: '🍎', title: 'Food-Grade Safe', body: 'PVA is widely used in food packaging, eye drops, and pharmaceutical capsule coatings. Our bags are food-grade safe — certification available upon request.' },
               { icon: '🚫', title: 'No BPA or Phthalates', body: 'Our bags contain no BPA, no phthalates, and no heavy metals. We provide SGS third-party testing documentation to confirm.' },
               { icon: '🐾', title: 'Safe for Animals', body: 'Animals that ingest PVA pass it safely. It does not accumulate in tissue or cause toxic effects at incidental exposure levels.' },
             ].map((item) => (
